@@ -1,0 +1,55 @@
+HTML - 	
+	Hyper text markup language
+	HTML can not complier.
+
+Hyper -
+	hyper is represting next location.
+	ex - Home
+
+TEXT - 
+	Text is combitnation number, char, symbol.
+	ex - Amit@12345
+
+MARKUP -
+	Markup is library. it contain defination of all tag.
+
+Categories of Programming -
+
+	1. Code base programming
+		- base on code <HTML>
+
+	2. Form base programming
+		- working on tools <.net>
+
+HTML Syntax(Tags <>) -
+	<b>
+	<u>
+
+Types of Tags -
+	1. Open Tag - <> <b>
+	2. Close Tag - <></> 
+		ex - <u> </u>
+		suppose i is close tag - <i> </i>
+		(/) - tag closing operator
+
+HTML Structure - 
+<HTML>	//Representation Web Browser
+	<body>	//Body tag representing output location
+		// All tag
+	</body>
+</HTML>
+
+How to create first html program?
+	Create folder or directory(can not use space between two words)
+	any types of message is called inner html.
+
+Page Management in HTML
+	<a></a> - it can not manage the page.
+ 	using iframe tag <iframe> full form interfrace framing.
+	attrubute if <iframe> 
+		1. Height
+		2. Width
+		3. Name
+
+Assigement 1 -
+	Create 

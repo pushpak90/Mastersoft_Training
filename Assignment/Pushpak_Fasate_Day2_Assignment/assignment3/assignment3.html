@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script language = "JavaScript">
+			document.write("Assignment 3" + "<br>");
+			var total_salary, per_amount;
+			var name = prompt("Enter Name : ");
+			var org = prompt("Enter Orgnation : ");
+			var dest = prompt("Enter Designation : ");
+			var salary = parseInt(prompt("Enter Salary : "));
+			var HRA = parseInt(prompt("Enter HRA : "));
+			var DA = parseInt(prompt("Enter DA : "));
+			var city = prompt("Enter City : ");
+			
+			document.write("Name : "+name+ "<br>");
+			document.write("Orgnation Name : "+org+ "<br>");
+			document.write("Designation : "+dest+ "<br>");
+			document.write("Salary : "+ salary+ "<br>");
+			document.write("HRA : "+ HRA+ "<br>");
+			document.write("DA : "+DA+ "<br>");
+			total_salary = salary + HRA + DA;
+			document.write("Total Salary : "+total_salary+ "<br>");
+			document.write("City : "+city+ "<br>")
+			
+			if(total_salary >= 5000)
+			{
+				per_amount = ((5 * total_salary) / 100);
+				document.write("5% of "+total_salary+" = ");
+				document.write(per_amount);
+			}
+			else if(total_salary >= 2000 && total_salary < 5000)
+			{
+				per_amount = ((2 * total_salary) / 100);
+				document.write("2% of "+total_salary+" = ");
+				document.write(per_amount);
+			}
+			else
+			{
+				document.write("Wait for approval");
+			}
+		</script>
+	</head>
+</html>

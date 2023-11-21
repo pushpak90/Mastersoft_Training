@@ -1,0 +1,216 @@
+JavaScript
+	1. JavaScript is use to inside the html
+	2. JavaScript is a case sensetive Language.
+	3. Scripting is used inside the head tag.
+
+Structure of Java script - 
+<html>
+	<head>
+		<script language = "JavaScript">
+		</script>
+	</head>
+</html>
+
+JavaScript statement - 
+main()
+{
+	statement
+	//Body of statement
+}
+
+if/if else/while----
+{
+	statement
+	//block of statement
+}
+
+display()
+{
+	statement
+	//container statement
+}
+
+JavaScript statement - 
+1. Output statement
+	output window is called document window
+	<html>
+		<head>
+			<script language = "JavaScript">
+				document.write("Welcome to my program");
+				alert("This is alert Box");
+				confirm("This is confirm statement");
+				prompt("Enter Your Name ");
+			</script>
+		</head>
+	</html>	
+
+	Inside the script cannot used any type og html tag
+
+JavaScript Variable -
+	1. Variable is a name of memory location where user can store different type of data value.
+	2. Type of varibale -
+		i. varient varibale	//useing datatype - int a;
+		ii. non-varient varibale	//depend on data value - a = 10;
+	3. Variable property -	(imp)
+		ex - 	a = 10;
+				print a;
+				b = 20;
+				b = 30;
+				print b;	(Overwride)
+
+IMP - Variable Terminology - 
+	ex - 	a = 10	//intialization
+			Variable  with value
+			
+			b = 20
+			b	//Decalaration
+			only name of the varibale
+
+IMP - Variable Scope - 
+	1. Local varibale
+		inside the program
+	2. Global varibale
+		outside the program
+		
+How to create varibale in JavaScript - 
+using var keyword
+syntax : 	var name;
+			var a;
+			var city;
+			
+castcating is a combination of message + variable value 
+	<html>
+		<head>
+			<script language = "JavaScript">
+				var a = 10;
+				document.write(a + "<br>");	
+				document.write("The value of a "+a);
+				//castcating is a combination of message + variable value 
+				//(+) Cascading Operator
+				
+			</script>
+		</head>
+	</html>
+	
+User Input Concept - 
+//default format of any variable is string
+
+How to accept numerical data - 
+parstInt()
+
+<html>
+	<head>
+		<script language = "JavaScript">
+			var a, b, c;
+			a = parseInt(prompt("Enter any number : "));
+			b = parseInt(prompt("Enter any number : "));
+			c = a + b;
+			document.write(c);
+		</script>
+	</head>
+</html>
+
+Assigment 1 : 
+Write a program to generate following result:
+	input following information from the user
+		name 
+		city 
+		state
+		Country
+		mobile 
+		email
+		college 
+		subject 
+		mark1 
+		mark2 
+		mark3 
+		mark4
+		mark5
+		
+	logic 1 - 
+		1. Input all data from the user.
+		2. display all information on computer screen with specific total.
+		3. display name, city, state in red color(using <font> in document.write() statement).
+Assigment 2 :
+		4. generate the total if all subject mark > 40.
+
+Assigment 3 : 
+	generate the following result.
+		input following information from the user
+			name
+			orgnisation
+			dest
+			salary
+			HRA
+			DA
+			City
+		
+		logic 
+		1. calculate total salary.(total_salary = salary + HRA + DA).
+		2. Check the following condition
+			i. totol_salary > 5000	- Display 5% of salary amount.
+			ii. total_salary > 2000 and total_salary < 5000 - Display 2% of salary amount.
+			iii. Otherwise Display wait for next approval.
+			
+Assigment 4 : 
+input two number form the user and perform the following operation using switch case statement.
+	choise = 1	then perform addition of two number.
+	choise = 2	then perform multiplication of two number.
+	choise = 3 	then perform subtraction of two number.
+	otherwise invalid.
+
+Assigment 5 :
+Input any number form the user and display table of given number
+in following format
+	2 * 1 = 2 .... till 2 * 10 = 20 (10)
+	using while, do and for.
+
+Program Management : 
+	1. Condition Management
+	2. Flow Management	(Looping)
+
+Input % from the user and check the following condition.
+per > 60 //fd//
+per > 50 and per < 60 //sd//
+per > 40 and per < 50 //td//
+otherwise fail	
+
+Switch case statement - 
+case is a part of program.
+switch case generally is use to option base programming.
+
+Looping - 
+looping is called iteration statement.
+Types of looping -
+	1. Variable Loop	(While, do and for)
+	2. Object Loop	(foreach)
+	
+Loop variable - 
+	ex - 	i = 1;		
+			i <= 10;	
+			i++;		
+	Looping is used to counter variable
+	
+	1. While Loop
+		while loop also called as Entery control loop.
+		while(i <= 10)	
+		{
+			document.write(i+"<br>");
+			i = i + 1;	
+		}
+		
+	2. do while loop
+		do while loop is also calles as exit control loop.
+		do
+		{
+			document.write(i+"<br>");
+			i = i + 1;
+		}while(i <= 10)
+		
+	3. For loop
+		it is also called single line loop.
+		for(i = 1; i <=10; i++)
+		{
+			document.write(i+"<br>");
+		}
+	

@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script language = "JavaScript">
+			document.write("Assignment 2"+"<br>");
+			var sum, sum1;
+			var name = prompt("Enter Name : ");
+			var city = prompt("Enter City : ");
+			var state = prompt("Enter State : ");
+			var country = prompt("Enter Country : ");
+			var mobile = parseInt(prompt("Enter Mobile Number : "));
+			var email = prompt("Enter Email : ");
+			var college = prompt("Enter College Name : ");
+			var subject = prompt("Enter Subject Name : ");
+			var mark1 = parseInt(prompt("Enter mark 1 : "));
+			var mark2 = parseInt(prompt("Enter mark 2 : "));
+			var mark3 = parseInt(prompt("Enter mark 3 : "));
+			var mark4 = parseInt(prompt("Enter mark 4 : "));
+			var mark5 = parseInt(prompt("Enter mark 5 : "));
+			
+			document.write("<font color=red>"+"Name : "+name+"</font><br>");
+			document.write("<font color=red>"+"City : "+city+"</font><br>");
+			document.write("<font color=red>"+"State : "+state+"</font><br>");
+			document.write("Country : "+country+"<br>");
+			document.write("Mobile : "+mobile+"<br>");
+			document.write("Email : "+email+"<br>");
+			document.write("College : "+college+"<br>");
+			document.write("Subject : "+subject+"<br>");
+			sum1 = mark1 + mark2 + mark3 + mark4 + mark5;
+			document.write("Total Marks : "+sum1+"<br>");
+			
+			if(mark1 > 40 && mark2 > 40 && mark3 > 40 && mark4 > 40 && mark5 > 40)
+			{
+				sum = mark1 + mark2 + mark3 + mark4 + mark5;
+				document.write("Total Marks : "+sum);
+			}
+			else
+			{
+				document.write("Not Eligible");
+			}
+		</script>
+	</head>
+<head>

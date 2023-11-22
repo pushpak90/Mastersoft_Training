@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script language="JavaScript">
+			function basicinfo(name, city, email, mobile, state, country)
+			{
+				document.getElementById("basic_info").innerHTML = name+"<br>"+city+"<br>"+email+"<br>"+mobile+"<br>"+state+"<br>"+country;
+			}
+			
+			function qualification(college, sem, branch, address)
+			{
+				document.getElementById("quali").innerHTML = college+"<br>"+sem+"<br>"+branch+"<br>"+address;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Assignment 1</h1>
+		
+		<p id="basic_info"></p>
+		<input type="button" value="Submit" onclick="basicinfo('Pushpak', 'Nagpur', 'pushpak@gmail.com', 7689054321, 'MH', 'India')">
+		
+		<p id="quali"></p>
+		<input type="button" value="Submit" onclick="qualification('SBJITMR', 8, 'CSE', 'Nagpur')">
+	</body>
+</html>

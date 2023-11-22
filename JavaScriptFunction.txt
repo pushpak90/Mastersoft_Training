@@ -45,7 +45,7 @@ How to access multiple function?
 
 Assigment 1:
 	Generate the following result using function concept.
-		i. 	reate a function - basic_info();
+		i. 	create a function - basic_info();
 				display following information
 					name, city, email, mobile, state, country
 		ii.	create a function - qualification();

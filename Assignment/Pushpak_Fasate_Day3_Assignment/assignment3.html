@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<script language="JavaScript">
+			var gname, gcity, gcollege, gm1, gm2, gm3, gm4, gm5, total;
+			function input(name, city, college, m1, m2, m3, m4, m5)
+			{
+				gname = name;
+				gcity = city;
+				gcollege = college;
+				gm1 = m1;
+				gm2 = m2;
+				gm3 = m3;
+				gm4 = m4;
+				gm5 = m5;
+				display();
+			}
+			
+			function display()
+			{
+				total = gm1 + gm2 + gm3 + gm4 + gm5;
+				document.getElementById('input').innerHTML = gname+"<br>"+gcity+"<br>"
+				+gcollege+"<br>"+gm1+"<br>"+gm2+"<br>"+gm3+"<br>"+gm4+"<br>"+gm5+"<br>"+
+				"Total Marks : " + total;
+				if(total > 250)
+				{
+					document.getElementById("input1").innerHTML = "First Division";
+				}
+				else if(total > 100 && total < 250)
+				{
+					document.getElementById("input1").innerHTML = "Second Division";
+				}
+				else
+				{
+					document.getElementById("input1").innerHTML = "Fail";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Assigment 3</h1>
+		<p id="input"></p>
+		<p id="input1"></p>
+		<input type="button" value="submit" onclick="input('Pushpak', 'Nagpur', 'SB', 87, 76, 67, 98, 77)">
+	</body>
+</html>

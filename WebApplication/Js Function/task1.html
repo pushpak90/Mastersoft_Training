@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script language="JavaScript">
+			function basicInfo(name, city, email, mobile, state, country)
+			{
+				document.getElementById("p1").innerHTML = name+"<br>"+city+"<br>"+email+"<br>"+mobile+"<br>"+state+"<br>"+country;
+			}
+			function qualification(college, sem, branch, address)
+			{
+				document.getElementById("p2").innerHTML = college+"<br>"+sem+"<br>"+branch+"<br>"+address;
+			}
+			function exprence(company, dest, salary, joiningdate)
+			{
+				document.getElementById("p3").innerHTML =company+"<br>"+dest+"<br>"+salary+"<br>"+joiningdate; 
+			}
+		</script>
+	</head>
+	<body>
+		<p id="p1"></p>
+		<input type="button" value="Submit" onclick="basicInfo('Pushpak', 'Nagpur', 'pushpak@gmail.com', 7654678765, 'MH', 'India')">
+		<p id="p2"></p>
+		<input type="button" value="Submit" onclick="qualification('SB', '8th', 'CSE', 'Nagpur')">
+		<p id="p3"></p>
+		<input type="button" value="Submit" onclick="exprence('ASP OL Media', 'Software Engineer', '3.5LPA', '08-09-2023')">
+	</body>
+</html>	

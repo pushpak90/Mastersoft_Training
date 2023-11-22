@@ -1,0 +1,135 @@
+JavaScript Function : 
+	Function is a small jobs program.
+	
+Function Seperator(IMP) - 
+	1. Varibale seperator a, b
+	2. if(a>b)	//Block seperator{}
+		{
+			a;
+		}
+	3. Suppose display()	//Function seperator
+	4. Suppose b[]	//Array seperator
+	
+How to create function?
+	syntax : 	
+			function name()
+			{
+				//Container statement
+			}
+
+Types of function :
+	1. User define function (externsic function)
+	2. Build-in function	(internsic function)
+	
+How access function :
+	display();	Semicolon(;) - is called function calling operator
+	
+	1. 	access any type of function inside the JavaScript using button control with help of click event.
+		<input type="Button" value ="Submit" onclick="function_name()">
+		on keyword use to activate the event.
+		Function approch - button to up
+		
+How to access multiple function?
+	using function within function concept.
+	ex -
+		function display()
+		{
+			document.write("This my first program in JavaScript Function."+"<br>");
+			show();
+		}
+		
+		function show()
+		{
+			document.write("This Show Function.");
+		}
+
+Assigment 1:
+	Generate the following result using function concept.
+		i. 	reate a function - basic_info();
+				display following information
+					name, city, email, mobile, state, country
+		ii.	create a function - qualification();
+				display following information.
+					college, semister, branch, address
+		iii.	create a function - exprence()
+				display following information.
+					company, designation, salary, joining
+ 
+Function Parameter/Argument :
+	display(a)
+	Parameter is a special type of data use inside function 
+	seperator a is called parameter.
+
+Types of parameter : 
+	1. Sender parameter	(Actual parameter)
+	2. Receiver parameter	(Formal parameter)
+	
+	1. Sender parameter :
+		At the time of function calling(button event).
+	
+	2. Receiver parameter :
+		At the time of function creation.
+		ex-	function display(a)
+			{c
+				
+			}
+
+How to create multiple parameter : 
+
+Assigment 2 : 
+	1.	Create a function - input()
+			Accept following parameter.
+				name, city, college, branch, percent
+			logic 
+				1.	Check the following condition.
+						percent > 60 - Grade A
+						percent > 50 and percent < 60 - Grade B
+						percent > 40 and percent < 50 - Grade C
+						Otherwise Fail
+				2.	Display all information with grade
+				
+Local and gobale variable concept
+	1. 	Local variable :
+		only use inside the program.
+		
+	2. global variable : 
+		outside the program
+		
+Assigment 3 :
+	1.	create a function - input()
+			accept following parameter
+				name, city, college, m1, m2, m3, m4, m5
+	2.	create a function - display()
+		logic :	a. Display all information using display().
+				b. Calculate the total inside display().
+				c. Check the following condition
+					i. 	if total > 250 then display first Division
+					ii.	total > 100 and total < 250 then display second Division
+					iii.	otherwise display fail.
+					
+Assigment 4 : 
+	1. 	create a function input()
+			accept following parameter
+				name, college, subject, branch, percent
+		
+	2. 	create a function grade()
+			accept only percent data value.
+			check the following condition
+				a.	if percent > 60 - Grade A
+				b. 	percent > 50 and less than 60 - Grade B
+				c.	otherwise fail
+	
+	3.	create a function display()
+			print all the information using display function
+			
+How to access any type of HTML tag inside the JavaScript(IMP) :
+	provide id attribute
+	ex-	<p id="p1"> </p>
+		<font id="f1"> </font>
+		<b id="b1"> </b>
+		
+	Access all tag inside the JavaScript with the help of id attribute using 
+	getElementById("id");
+	getElementById("p1");
+	getElementById("f1");
+	getElementById("b1");

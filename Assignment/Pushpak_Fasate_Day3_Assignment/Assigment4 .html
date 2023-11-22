@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<script language = "JavaScript">
+			var gname, gcollege, gsubject, gbranch, gpercent;
+			function input(name, college, subject, branch, percent)
+			{
+					gname = name;
+					gcollege = college;
+					gsubject = subject;
+					gbranch = branch;
+					gpercent = percent;
+					grade();
+					display();
+			}
+			
+			function grade()
+			{
+				if(gpercent > 60)
+				{
+					document.getElementById("p2").innerHTML = "Grade A";
+				}
+				else if(gpercent > 50 && gpercent < 60)
+				{
+					document.getElementById("p2").innerHTML = "Grade B"
+				}
+				else
+				{
+					document.getElementById("p2").innerHTML = "Fail";
+				}
+			}
+			
+			function display()
+			{
+				document.getElementById("p1").innerHTML = gname
+				+"<br>"+gsubject+"<br>"+gbranch+"<br>"+gpercent;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Assigment 4</h1>
+		<p id="p1"></p>
+		<p id="p2"></p>
+		<input type="button" value="submit" onclick="input('Pushpak', 'SB', 'PCM', 'CSE', 5)">
+	</body>
+</html>

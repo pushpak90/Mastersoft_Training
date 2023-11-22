@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script language=""JavaScript>
+			var gname, gcity, gcollege, gbranch, gpercent;
+			function input(name, city, college, branch, percent)
+			{
+				gname = name;
+				gcity = city;
+				gcollege = college;
+				gbranch = branch;
+				gpercent = percent;
+				display();
+			}
+			function display()
+			{
+				document.getElementById("info1").innerHTML = gname + "<br>" + gcity + "<br>" + gcollege+ "<br> "+gbranch+ "<br>" +gpercent;
+				if(gpercent >= 60)
+				{
+					document.getElementById("info").innerHTML = "Grade A";
+				}
+				else if(gpercent >= 50 && gpercent < 60)
+				{
+					document.getElementById("info").innerHTML = "Grade B";
+				}
+				else if(gpercent >= 40 && gpercent < 50)
+				{
+					document.getElementById("info").innerHTML = "Grade C";
+				}
+				else
+				{
+					document.getElementById("info").innerHTML = "Fail";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Assignment 2</h1>
+		<p id="info1"></p>
+		<p id="info"></p>
+		<input type="button" value="Submit" onclick="input('Pushpak', 'Nagpur', 'SBJITMR', 'CSE', 85)">
+	</body>
+</html>

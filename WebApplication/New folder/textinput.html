@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<script language = "JavaScript">
+			function display()
+			{
+				var name;
+				name = document.getElementById("t1").value;
+				//document.getElementById("t2").innerHTML = name;
+				document.write(name);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="t1">
+		<br>
+		<input type="button" value="Submit" onclick="display()">
+		<p id="t2"></p>
+	</body>
+</html>

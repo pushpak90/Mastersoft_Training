@@ -1,0 +1,113 @@
+How to use textbox control inside the JavaScript?
+	1. 	Provide id attribute.
+	2. 	textbox is used to value method to accepting data.
+
+How to accept numircal data using textbox?
+
+Assigment	1:
+	Create a function input()
+		Create a form in following format
+			Enter your name - textbox
+			Enter your college - textbox
+			Enter your subject - textbox
+			Enter mark1 - textbox
+			Enter mark2 - textbox
+			Enter mark3 - textbox
+			Enter mark4 - textbox
+			Enter mark5 - textbox
+			total is - textbox
+			your grade - textbox
+			button submit
+			logic  1 :	Calculate total
+					2:	Display grade in following condition
+							total > 250 - grade A
+							total > 150 and total < 250 - grade B
+							other wise fail
+
+Assigment 2:
+	convert all function assigment into textbox control
+		4 assigment
+
+JavaScript history handling function
+	String is a group of character
+	1. length
+	2. replace*
+	3. replaceAll*
+	4. concat
+	5. upperCase
+	6. lowerCase
+	7. padStart*
+	8. padEnd
+	
+Assigment 3:
+	Create a from 
+		Enter your name - textbox
+		button - length
+		<hr>
+		
+		Enter your message - textbox
+		Enter your replace word - textbox
+		button - replace
+		button replaceAll
+		<hr>
+		
+		Enter your name - textbox
+		Enter your surname - textbox
+		your data is textbox
+		button - concat
+		<hr>
+		
+		Enter your digit - textbox
+		Enter your symbol - textbox
+		number of position - textbox
+		button - pag start
+		button - pad end 
+
+JavaScript Object	:
+	DOM - document Object model
+			ex - document.write(), document.getElementByID(),
+	BOM - Browser Object Model
+			window Object
+			ex- window.opwn(), window.print()
+		
+1. HTML 
+	1.	HTML is use to make page only
+	2.	HTML is use disconnect Arichitecture
+2. JavaScript
+
+3. CSS - 
+
+CSS
+	Cascading Style Sheet
+	Cascading - 
+	1.	CSS is used to create a sheet
+	2.	All sheet is to be communicate multiple web pages using Cascading structure
+	3. 	HTML attribute is used to = operator
+		ex - height = "100"
+	4.	CSS attribute is used : operator
+		ex - height : 100
+	5. CSS is collection of attribute
+
+Types of CSS
+	1.	Internal
+	2. 	External
+	3.	Inline
+	4. 	Cross CSS
+	
+1. Inline CSS - 
+	Inline CSS is used to HTML tag <HTML> with style attribute
+	Division tag (<div>)
+		Division is used to create Arichitecture of website.
+		by deafult div is used to fix position.
+		position = adslute(flexible)
+		There are following attribute - 
+			1.	id
+			2.	style
+				~ backgound-color
+				~ height
+				~ width
+				~ top
+				~ left
+				~ position
+		All type of numerical data represent in pixel
+			3.	

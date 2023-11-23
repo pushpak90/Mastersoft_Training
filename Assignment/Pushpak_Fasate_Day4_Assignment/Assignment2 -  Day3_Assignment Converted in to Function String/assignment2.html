@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            function input()
+            {
+                var n = document.getElementById("n1").value;
+                var c = document.getElementById("c1").value;
+                var cl = document.getElementById("cl1").value;
+                var b = document.getElementById("b1").value;
+                var p = parseInt(document.getElementById("p1").value);
+
+                document.getElementById("f1").innerHTML= (n +"<br>" + c +"<br>"+ cl +"<br>"+ b +"<br>"+ p);
+
+                    if(p > 60)
+                {
+                    document.getElementById("g1").value="A grade";
+                }
+                
+                else if(p > 50 && p< 60)
+                {
+                    document.getElementById("g1").value="B grade";
+                }
+                else if(p > 40 && p< 50)
+                {
+                    document.getElementById("g1").value="C grade";
+                }
+                else
+                {
+                    document.getElementById("g1").value="fail";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        </body>
+            <h1>assignment 2</h1>
+            Enter your Name :
+            <input type="text" id="n1">
+            <br>
+            Enter your City :
+            <input type="text" id="c1">
+            <br>
+            Enter your College :
+            <input type="text" id="cl1">
+            <br>
+            Enter your Branch :
+            <input type="text" id="b1">
+            <br>
+            Enter your Percent :
+            <input type="text" id="p1">
+            <br>
+            Grade :
+            <input type="text" id="g1">
+            <br>
+            <input type="button" value="submit" onclick="input()">
+            <hr>
+            <p id ="f1"></p>
+            <hr>
+    </body>
+</html>

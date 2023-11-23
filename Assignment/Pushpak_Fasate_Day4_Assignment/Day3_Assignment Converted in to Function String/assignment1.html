@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            function basicinfo()
+            {
+                var name = document.getElementById("n1").value;
+				var city = document.getElementById("n2").value;
+				var email = document.getElementById("n3").value;
+				var mobile = document.getElementById("n4").value;
+				var state = document.getElementById("n5").value;
+				var country = document.getElementById("n6").value;
+				document.getElementById("pn").innerHTML = name
+				+"<br>"+city+"<br>"+email+"<br>"+mobile+"<br>"+state
+				+"<br>"+country;
+            }
+
+			function qualification()
+			{
+				var college = document.getElementById("n7").value;
+				var sem = document.getElementById("n8").value;
+				var branch = document.getElementById("n9").value;
+				var address = document.getElementById("n10").value;
+				document.getElementById("pn1").innerHTML = college
+				+"<br>"+sem+"<br>"+branch+"<br>"+address;
+			}
+
+			function expernce()
+			{
+				var company = document.getElementById("n11").value;
+				var desgnation = document.getElementById("n12").value;
+				var salary = document.getElementById("n13").value;
+				var joining = document.getElementById("n14").value;
+				document.getElementById("pn3").innerHTML = company
+				+"<br>"+desgnation+"<br>"+salary+"<br>"+joining;
+			}
+        </script>
+    </head>
+    <body>
+		<h1>Assigement 1</h1>
+		<hr>
+		Enter Name : 
+		<input type="text" id="n1">
+		<br>
+		Enter City :
+		<input type="text" id="n2">
+		<br>
+		Enter Email :
+		<input type="text" id="n3">
+		<br>
+		Enter Mobile : 
+		<input type="text" id="n4">
+		<br>
+		Enter State : 
+		<input type="text" id="n5">
+		<br>
+		Enter Country :
+		<input type="text" id="n6">
+		<br>
+		<input type="button" value="Submit" onclick="basicinfo()">
+		<hr>
+		<p id="pn"></p>
+		<hr>
+		
+		Enter College Name : 
+		<input type="text" id="n7">
+		<br>
+		Enter Sem :
+		<input type="text" id="n8">
+		<br>
+		Enter Branch :
+		<input type="text" id="n9">
+		<br>
+		Enter address : 
+		<input type="text" id="n10">
+		<br>
+		<input type="button" value="Submit" onclick="qualification()">
+		<hr>
+		<p id="pn1"></p>
+		<hr>
+		
+		Enter Company : 
+		<input type="text" id="n11">
+		<br>
+		Enter Desgnation :
+		<input type="text" id="n12">
+		<br>
+		Enter salary :
+		<input type="text" id="n13">
+		<br>
+		Enter joining : 
+		<input type="text" id="n14">
+		<br>
+		<input type="button" value="Submit" onclick="expernce()">
+		<hr>
+		<p id="pn3"></p>
+		<hr>
+	</body>
+</html>

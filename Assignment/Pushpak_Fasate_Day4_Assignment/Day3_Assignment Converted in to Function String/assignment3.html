@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <script language = "JavaScript">
+            var gname, gcity, gcollege, gm1, gm2, gm3, gm4, gm5, total;
+            function input()
+            {
+                gname = document.getElementById("n1").value;
+				gcity = document.getElementById("n2").value;
+				gcollege = document.getElementById("n3").value;
+                gm1 = parseInt(document.getElementById("m1").value);
+                gm2 = parseInt(document.getElementById("m2").value);
+                gm3 = parseInt(document.getElementById("m3").value);
+                gm4 = parseInt(document.getElementById("m4").value);
+                gm5 = parseInt(document.getElementById("m5").value);
+                display();
+            }
+
+            function display()
+            {
+                total = gm1 + gm2 + gm3 + gm4 + gm5;
+                document.getElementById("p1").innerHTML = gname +"<br>"+gcity +"<br>"+gcollege;
+                document.getElementById("p2").innerHTML = total;
+                if(total > 250)
+				{
+					document.getElementById("p3").innerHTML = "First Division";
+				}
+				else if(total > 100 && total < 250)
+				{
+					document.getElementById("p3").innerHTML = "Second Division";
+				}
+				else
+				{
+					document.getElementById("p4").innerHTML = "Fail";
+				}
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Assigement 3</h1>
+		<hr>
+		Enter Name : 
+		<input type="text" id="n1">
+		<br>
+		Enter City :
+		<input type="text" id="n2">
+		<br>
+		Enter College :
+		<input type="text" id="n3">
+        <br>
+        Enter Mark 1 :
+        <input type="text" id="m1">
+        <br>
+        Enter Mark 2 :
+        <input type="text" id="m2">
+        <br>
+        Enter Mark 3 :
+        <input type="text" id="m3">
+        <br>
+        Enter Mark 4 :
+        <input type="text" id="m4">
+        <br>
+        Enter Mark 5 :
+        <input type="text" id="m5">
+        <br>
+
+        <input type="button" value="submit" onclick="input()">
+        <hr>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <hr>
+    </body>
+</html>

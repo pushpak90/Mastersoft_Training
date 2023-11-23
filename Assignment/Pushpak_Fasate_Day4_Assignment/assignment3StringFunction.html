@@ -1,0 +1,119 @@
+<html>
+	<head>
+		<script language="JavaScript">
+		
+		function findlength()
+		{
+			var name = document.getElementById("len1").value;
+			document.getElementById("len2").value = name.length;
+		}
+		
+		function textreplace()
+		{
+			var text1 = document.getElementById("re").value;
+			var text2 = document.getElementById("r1").value;
+			var text3 = document.getElementById("r2").value;
+			document.getElementById("r3").value = text1.replace(text2,text3);
+		}
+		
+		function textreplaceAll()
+		{
+			var text1 = document.getElementById("re").value;
+			var text2 = document.getElementById("r1").value;
+			var text3 = document.getElementById("r2").value;
+			document.getElementById("r4").value = text1.replaceAll(text2,text3);
+		}
+		
+		function fullcon()
+		{
+			var text1 = document.getElementById("c1").value;
+			var text2 = document.getElementById("c2").value;
+			document.getElementById("cf").value = text4.concat(" ",text5);
+		}
+		
+		function startpad()
+		{
+			var text1 = document.getElementById("p1").value;
+			var text2 = document.getElementById("p2").value;
+			var text3 = document.getElementById("p3").value;
+			document.getElementById("ps1").value = text6.padStart(text8,text7);
+		}
+		
+		function endpad()
+		{
+			var text1 = document.getElementById("p1").value;
+			var text2 = document.getElementById("p2").value;
+			var text3 = document.getElementById("p3").value;
+			document.getElementById("pe1").value = text1.padEnd(text3,text2);
+		}
+		
+		</script>
+	</head>
+	<body>
+		<h1>Assignment 3</h1>
+		<hr>
+		
+		<h2>Find the length : </h2>
+		Enter your name : 
+		<input type="text" id="len1">
+		<br>
+		Length : 
+		<input type="text" id="len2">
+		<br>
+		<input type="button" value="Length" onclick="findlength()">
+		<br>
+		<hr>
+		
+		<h2>Replace and ReplaceAll</h2>
+		Enter your message : 
+		<input type="text" id="re">
+		<br>
+		Enter your replace word :
+		<input type="text" id="r1">
+		<br>
+		Replace to :
+		<input type="text" id="r2">
+		<br>
+		Replace one : 
+		<input type="text" id="r3">
+		<br>
+		Replace All : 
+		<input type="text" id="r4">
+		<br>
+		<input type="button" value="replaceone" onclick="textreplace()">
+		<input type="button" value="replaceAll" onclick="textreplaceAll()">
+		<hr>
+		
+		<h2>Concat</h2>
+		Enter name :
+		<input type="text" id="c1">
+		<br>
+		Enter surname : 
+		<input type="text" id="c2">
+		<br>
+		Full Name : 
+		<input type="text" id="cf">
+		<br>
+		<input type="button" value="Concat" onclick="fullcon()">
+	
+		<hr>
+		<h2>PadStart and PadEnd</h2>
+		Enter your digit : 
+		<input type="type" id="p1">
+		<br>
+		Enter your symbol : 
+		<input type="text" id="p2">
+		<br>
+		Number of position : 
+		<input type="text" id="p3">
+		<br>
+		Pad Start Result : 
+		<input text="text" id="ps1">
+		<input type="button" value="Pad Start" onclick="startpad()">
+		<br>
+		Pad End Result : 
+		<input text="text" id="pe1">
+		<input type="button" value="Pad End" onclick="endpad()">
+		<br>
+	</body>
+</html>

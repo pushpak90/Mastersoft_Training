@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <script language = "JavaScript">
+            function findlength()
+            {
+                //For Length Function
+                var text = document.getElementById("name").value;
+                document.getElementById("cal_len").value = text.length;
+                
+                //Concat Function
+                var text1 = document.getElementById("name1").value;
+                var text2 = document.getElementById("name2").value;
+                document.getElementById("name3").value = text1.concat(" ",text2);
+                
+                //Replace
+                var text3 = document.getElementById("name4").value;
+                var rep1 = document.getElementById("re1").value;
+                var rep2 = document.getElementById("re2").value;
+                document.getElementById("name5").value = text3.replace(rep1,rep2);
+                document.getElementById("name6").value = text3.replaceAll(rep1,rep2);
+                
+                //Pad start
+                var text4 = document.getElementById("name7").value;
+                var sym = document.getElementById("name8").value;
+                var pos = document.getElementById("name9").value;
+                document.getElementById("name10").value = text4.padStart(pos,sym);
+                document.getElementById("name11").value = text4.padEnd(pos,sym);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Assignment 3 :</h1>
+        <hr>
+        
+        
+        <h2>Find the length of string :</h2>
+        Enter your name :
+        <input type="text" id="name">
+        <br><br>
+        Length of given string :
+        <input type="text" id="cal_len">
+        <hr>
+        
+        
+        <h2>Concat two string</h2>
+        <br>
+        Enter your first name : 
+        <input type="text" id="name1">
+        <br><br>
+        Enter your last name : 
+        <input type="text" id="name2">
+        <br><br>
+        full name :
+        <input type="text" id="name3">
+        <br>
+        <hr>
+        
+        
+        <h2>Replace and ReplaceAll</h2>
+        <br>
+        Enter your message :
+        <input type="text" id="name4">
+        <br><br>
+        Enter your replace word :
+        <input type="text" id="re1">
+        <br><br>
+        what want to replace 
+        <input type="text" id="re2">
+        <br><br>
+        Replace :
+        <input type="text" id="name5">
+        <br><br>
+        Replace All :
+        <input type="text" id="name6">
+        <br><br>
+        <hr>
+
+        <h2>Padstart and Padend</h2>
+        Enter your digit : 
+        <input type="text" id="name7">
+        <br><br>
+        Enter your symbol :
+        <input type="text" id="name8">
+        <br><br>
+        Number of position : 
+        <input type="text" id="name9">
+        <br><br>
+        Result :
+        <input type="text" id="name10">
+        <br><br>
+        Result1 :
+        <input type="text" id="name11">
+        <hr>
+        <input type="button" value="Submit" onclick="findlength()">
+
+    </body>
+</html>

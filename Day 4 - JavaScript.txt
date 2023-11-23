@@ -110,4 +110,3 @@ Types of CSS
 				~ left
 				~ position
 		All type of numerical data represent in pixel
-			3.	

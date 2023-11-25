@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <style language="text/css">
+            .box1
+            {
+                width: 300;
+                height: auto;
+                border-style: solid;
+                background-color: lightpink;
+            }
+            .button
+            {
+                width: 100px;
+                height: 30px;
+                border-style: solid;
+                border-color: red;
+            }
+        </style>
+        <script language="JavaScript">
+            var gtotal;
+            function cal(amount, gst)
+            {
+                var total = (amount * gst)/100;
+                var total1 = total + amount;
+                document.getElementById("ta").value = total1;
+                gtotal = total1;
+
+            }
+            function show(name1)
+            {
+                document.write("Dear User,<br>",name1);
+                document.write("<br>Your GST bill is Rs."+gtotal)
+            }
+        </script>
+    </head>
+    <body>
+        <div class="box1">
+            <center>
+                <h1>GST Form</h1>
+
+            Enter Name : <input type="text" id="name"><br><br>
+            Enter Amount : <input type="text" id="amo"><br><br>
+            GST : <input type="text" id="gs"><br><br>
+            Total Amount : <input type="text" id="ta"><br><br>
+            <input type="button" class="button" value="Calculate" id="" onclick="cal(
+              parseInt(document.getElementById('amo').value),
+              parseInt(document.getElementById('gs').value)
+            )">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" class="button" value="Show" onclick="show(
+                document.getElementById('name').value
+            )">
+            <br><br>
+        </center>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <script language="JavaScript">
+        function addnum()
+        {
+            var number1 = parseInt(document.getElementById("num1").value);
+            var number2 = parseInt(document.getElementById("num2").value);
+            var total = number1 + number2;
+            document.getElementById("num3").value = total;
+        }
+        function addsub()
+        {
+            var number1 = parseInt(document.getElementById("num1").value);
+            var number2 = parseInt(document.getElementById("num2").value);
+            var total = number1 - number2;
+            document.getElementById("num3").value = total;
+        }
+        function addmul()
+        {
+            var number1 = parseInt(document.getElementById("num1").value);
+            var number2 = parseInt(document.getElementById("num2").value);
+            var total = number1 * number2;
+            document.getElementById("num3").value = total;
+        }
+    </script>
+    <style language="text/css">
+        .box1
+        {
+            height: auto;
+            width: 600px;
+            border-style: solid;
+        }
+        .button
+        {
+            height: 40px;
+            width: 70px;
+            border-style: solid;
+            border-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <center>
+            <h1>Form</h1>
+            <h3>Enter Number 1 : <input type="text" id="num1"></h3>
+            <h3>Enter Number 2 : <input type="text" id="num2"></h3>
+            <h3>Result : <input type="text" id="num3"></h3>
+            <input type="button" value="Submit" class="button" onclick="addnum()">&nbsp&nbsp
+            <input type="button" value="Submit" class="button" onclick="addsub()">&nbsp&nbsp
+            <input type="button" value="Submit" class="button" onclick="addmul()">&nbsp&nbsp
+            <br><br>
+        </center>
+    </div>
+</body>
+</html>

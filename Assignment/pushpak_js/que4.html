@@ -1,0 +1,62 @@
+<htmL>
+
+<head>
+    <style language="text/css">
+        .box1 {
+            height: auto;
+            width: 600px;
+            border-style: solid;
+        }
+
+        .button {
+            height: 40px;
+            width: 120px;
+            border-style: solid;
+            border-color: red;
+        }
+    </style>
+    <script language="JavaScript">
+        function addnum(n1, n2)
+        {
+            document.getElementById("num3").value = n1 + n2;
+        }
+
+        function addsub(n1, n2)
+        {
+            document.getElementById("num3").value = n1 - n2;
+        }
+
+        function addmul(n1, n2)
+        {
+            document.getElementById("num3").value = n1 * n2;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box1">
+        <center>
+            <h1>Form</h1>
+            <h3>Enter Number 1 : <input type="text" id="num1"></h3>
+            <h3>Enter Number 2 : <input type="text" id="num2"></h3>
+            <h3>Result : <input type="text" id="num3"></h3>
+            <input type="button" value="Add" class="button" onclick="addnum(
+                parseInt(document.getElementById('num1').value),
+                parseInt(document.getElementById('num2').value)
+            )">
+            &nbsp&nbsp
+            <input type="button" value="Substraction" class="button" onclick="addsub(
+            parseInt(document.getElementById('num1').value),
+            parseInt(document.getElementById('num2').value)
+            )">
+            &nbsp&nbsp
+            <input type="button" value="Mutipication" class="button" onclick="addmul(
+            parseInt(document.getElementById('num1').value),
+            parseInt(document.getElementById('num2').value)
+            )">&nbsp&nbsp
+            <br><br>
+        </center>
+    </div>
+</body>
+
+</htmL>

@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <style language="text/css">
+        .box1 {
+            height: auto;
+            width: 500px;
+            border-style: solid;
+            background-color: aquamarine;
+            padding-bottom: 20px;
+        }
+        
+        .button {
+            width: 100px;
+            height: 30px;
+            border-style: solid;
+            border-color: red;
+        }
+    </style>
+    <script language="JavaScript">
+        var gtotal;
+
+        function submitbu(ma1, ma2, ma3, ma4, ma5) {
+            var total = ma1 + ma2 + ma3 + ma4 + ma5;
+            document.getElementById("tot").value = total;
+            if (total > 250) {
+                document.getElementById("grade").value = "Grade A";
+            } else if (total < 150 && total < 250) {
+                document.getElementById("grade").value = "Grade B";
+            } else {
+                document.getElementById("grade").value = "Fail";
+            }
+            gtotal = total;
+        }
+
+        function show(name1, college, branch1) {
+            document.write("Name : " + name1 + "<br>");
+            document.write("College : " + college + "<br>");
+            document.write("Branch : " + branch1 + "<br>");
+            document.write("Total Marks : " + gtotal + "<br>");
+            if (gtotal > 250) {
+                document.write("Grade = grade A")
+            } else if (gtotal < 150 && gtotal < 250) {
+                document.write("Grade = grade B")
+            } else {
+                document.write("Grade = fail")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box1">
+        <div>
+            <center>
+                <h1>Grade Form</h1>
+
+                Student Name : <input type="text" id="name"><br><br> College Name : <input type="text" id="col"><br><br> Branch : <input type="text" id="branch"><br><br> Mark 1 : <input type="text" id="m1"><br><br> Mark 2 :<input type="text" id="m2"><br><br>                Mark 3 : <input type="text" id="m3"><br><br> Mark 4 : <input type="text" id="m4"><br><br> Mark 5 : <input type="text" id="m5"><br><br> Total : <input type="text" id="tot"><br><br> Grade : <input type="text" id="grade"><br><br>
+                <input type="button" value="Submit" class="button" onclick="submitbu(
+                    parseInt(document.getElementById('m1').value),
+                    parseInt(document.getElementById('m2').value),
+                    parseInt(document.getElementById('m3').value),
+                    parseInt(document.getElementById('m4').value),
+                    parseInt(document.getElementById('m5').value)
+                )"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                <input class="button" type="button" value="Show" onclick="show(
+                    document.getElementById('name').value,
+                    document.getElementById('col').value,
+                    document.getElementById('branch').value,
+                )">
+            </center>
+        </div>
+    </div>
+</body>
+
+</html>

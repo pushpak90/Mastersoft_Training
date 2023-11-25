@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script language="JavaScript">
+           function strreplace(s1, s2, s3)
+           {
+                document.getElementById("str4").value = s1.replace(s2,s3);
+           }
+        </script>
+    </head>
+    <body>
+        <h1>Replace</h1>
+        Enter Message : <input type="text"  id="str1"><br><br>
+        reaplce with : <input type="text"  id="str2"><br><br>
+        replace word : <input type="text"  id="str3"><br><br>
+        result : <input type="text" id="str4"><br><br>
+        <input type="button" value="Replace" onclick="strreplace(
+            document.getElementById('str1').value,
+            document.getElementById('str2').value,
+            document.getElementById('str3').value
+        )">
+    </body>
+</html>

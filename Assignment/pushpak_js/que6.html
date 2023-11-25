@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            function upperstr(s1)
+            {
+                document.getElementById("str2").value = s1.toUpperCase();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>To Upper Case String</h1>
+        Enter Message : <input type="text" id="str1"><br><br>
+        Result : <input type="text" id="str2"><br><br>
+        <input type="button" value="Submit" onclick="upperstr(document.getElementById('str1').value)">
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<script language="JavaScript">
+    function printfun() {
+        var name = document.getElementById("fname").value;
+        var city = document.getElementById("fcity").value;
+        var state = document.getElementById("sname").value;
+        var sub = document.getElementById("subname").value;
+        var m1 = parseInt(document.getElementById("mark1").value);
+        var m2 = parseInt(document.getElementById("mark2").value);
+        var m3 = parseInt(document.getElementById("mark3").value);
+        var m4 = parseInt(document.getElementById("mark4").value);
+        var m5 = parseInt(document.getElementById("mark5").value);
+        var total = m1+m2+m3+m4+m5;
+        document.getElementById("print").innerHTML = name+"<br>"+city+"<br>"+state+"<br>"+sub;
+        document.getElementById("resultsum").value= total;
+        if(total > 250)
+        {
+            document.getElementById("resultg").value = "Grade A";
+        }
+        else if(total > 150 && total < 250)
+        {
+            document.getElementById("resultg").value = "Grade B";
+        }
+        else
+        {
+            document.getElementById("resultg").value = "Fail";
+        }
+    }
+</script>
+<link rel="stylesheet" type="text/css" href="./style.css">
+
+<body>
+
+    <h3>Using CSS to style an HTML Form</h3>
+
+    <div class="div1">
+        <form>
+            <label for="fname">Enter Name</label>
+            <input type="text" id="fname" class="input1" placeholder="Your name..">
+
+            <label for="country">City</label>
+            <select id="fcity" class="country">
+                <option value="Pune">Pune</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Mumbai">Mumbai</option>
+            </select>
+
+            <label for="lname">State Name</label>
+            <input type="text" id="sname" class="input1" placeholder="Your state..">
+
+            <label for="lname">Subject Name</label>
+            <input type="text" id="subname" class="input1" placeholder="Your subject..">
+
+            <label for="lname">Mark 1</label>
+            <input type="text" id="mark1" class="input1" name="lastname" placeholder="Your subject..">
+
+            <label for="lname">Mark 2</label>
+            <input type="text" id="mark2" class="input1" name="lastname" placeholder="Your subject..">
+
+            <label for="lname">Mark 3</label>
+            <input type="text" id="mark3" class="input1" name="lastname" placeholder="Your subject..">
+
+            <label for="lname">Mark 4</label>
+            <input type="text" id="mark4" class="input1" name="lastname" placeholder="Your subject..">
+
+            <label for="lname">Mark 5</label>
+            <input type="text" id="mark5"class="input1"  name="lastname" placeholder="Your subject..">
+
+            Sum : 
+            <input type="text" class="input1" id="resultsum" >
+
+            Grade : 
+            <input type="text"  class="input1" id="resultg" >
+            <input type="button"  class="input1" value="Submit" onclick="printfun()">
+        </form>
+        <p id="print"></p>
+    </div>
+
+</body>
+
+</html>

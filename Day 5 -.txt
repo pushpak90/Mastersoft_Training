@@ -12,7 +12,7 @@ Internal CSS
 			<body>
 			</body>
 		<html
-	4. Method of internal CSS
+	4. Method of internal CSS 
 		i.	Tag name method
 		ii.	class method
 		
@@ -95,4 +95,7 @@ How to connect external css to html page?
 	<link> is use inside the <head>
 
 Cross CSS :
+
+Blog
+pushpakdotnet.blogspot.com
 	

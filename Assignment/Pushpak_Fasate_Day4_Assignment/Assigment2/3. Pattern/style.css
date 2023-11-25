@@ -1,0 +1,66 @@
+.box1 {
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+}
+
+.box2 {
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 1120px;
+    top: 8px;
+}
+
+.box3 {
+    background-color: aqua;
+    height: 100px;
+    width: 970px;
+    position: absolute;
+    left: 130px;
+    top: 8px;
+}
+
+.box4 {
+    background-color: lightblue;
+    height: 300px;
+    width: 100px;
+    position: absolute;
+    top: 120px;
+}
+
+.box5 {
+    background-color: lightcoral;
+    height: 300px;
+    width: 110px;
+    position: absolute;
+    left: 1120px;
+    top: 120px;
+}
+
+.box6 {
+    background-color: lightgreen;
+    height: 150px;
+    width: 300px;
+    position: absolute;
+    left: 140px;
+    top: 140px;
+}
+
+.box7 {
+    background-color: lightpink;
+    height: 160px;
+    width: 630px;
+    position: absolute;
+    left: 470px;
+    top: 140px;
+}
+
+.box8 {
+    background-color: lightsalmon;
+    height: 70px;
+    width: 1220px;
+    position: absolute;
+    top: 430px;
+}

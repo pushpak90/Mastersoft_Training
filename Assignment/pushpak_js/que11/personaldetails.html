@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css">
+        <script language="JavaScript">
+            function input(name, lname, city, state, country, phone, email)
+            {
+                document.getElementById("out1").innerHTML = "First Name : "+name+"<br>Last Name :"
+                +lname+"<br>State : "+city+"<br>Country : "+country+"<br>Phone : "+phone+"<br>Email : "
+                +email;
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <center>
+                <h1>Personal Details : </h1>
+                <hr>
+                <div>
+                    <label class="label1">First Name : </label>
+                    <input class="input1" id="fname" type="text"/>
+                </div>
+                <div>
+                    <label class="label1">Last Name : </label>
+                    <input class="input1" id="flast" type="text"/>
+                </div>
+                <div>
+                    <label class="label1">City Name : </label>
+                    <input class="input1" id="fcity" type="text"/>
+                </div>
+                <div>
+                    <label class="label1">State Name : </label>
+                    <input class="input1" id="fstate" type="text"/>
+                </div>
+                <div>
+                    <label class="label1">Country Name : </label>
+                    <input class="input1" id="fcountry" type="text"/>
+                </div>
+                <div>
+                    <label class="label1">Phone Number  : </label>
+                    <input class="input1" id="fphone" type="text"/>
+                </div>
+                <div>
+                    <label class="label1">Email : </label>
+                    <input class="input1" id="femail" type="text"/>
+                </div>
+                <input class="button1" type="button" value="Submit" onclick="input(
+                    document.getElementById('fname').value,
+                    document.getElementById('flast').value,
+                    document.getElementById('fcity').value,
+                    document.getElementById('fstate').value,
+                    document.getElementById('fcountry').value,
+                    document.getElementById('fphone').value,
+                    document.getElementById('femail').value
+                )">
+                <hr>
+                <h1> Personal Details : </h1>
+                <p id="out1"></p>
+                <hr>
+            </center>
+            
+        </div>
+    
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css">
+        <script language="JavaScript">
+            function input(name_10, per_10, name_12, per_12, name_eng, per_eng)
+            {
+                document.getElementById('out2').innerHTML = "10th School Name :" + name_10+
+                "<br>10th Percentages"+per_10+"<br>12th School Name : "+name_12+
+                "<br>12th Percentages : "+per_12+"<br>Engineering College Name : "+name_eng+
+                "<br>Percentages : "+per_eng;
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+            <h1>Qualification Details</h1>
+            <hr>
+            <div>
+                <center>
+                    <div>
+                        <label class="label1">10th School Name : </label>
+                        <input class="input1" id="name10" type="text"/>
+                    </div>
+                    <div>
+                        <label class="label1">Percentages : </label>
+                        <input class="input1" id="per10" type="text"/>
+                    </div>
+                    <div>
+                        <label class="label1">12th School Name : </label>
+                        <input class="input1" id="name12" type="text"/>
+                    </div>
+                    <div>
+                        <label class="label1">Percentages : </label>
+                        <input class="input1" id="per12" type="text"/>
+                    </div>
+                    <div>
+                        <label class="label1">Engineering College Name : </label>
+                        <input class="input1" id="nameeng" type="text"/>
+                    </div><div>
+                        <label class="label1">Percentages : </label>
+                        <input class="input1" id="pereng" type="text"/>
+                    </div>
+                    <input class="button1" type="button" value="Submit" onclick="input(
+                        document.getElementById('name10').value,
+                        document.getElementById('per10').value,
+                        document.getElementById('name12').value,
+                        document.getElementById('per12').value,
+                        document.getElementById('nameeng').value,
+                        document.getElementById('pereng').value
+                    )" id="">
+                    <hr>
+                    <h1>Qualification Details</h1>
+                    <p id="out2"></p>
+                    <hr>
+                </center>
+                
+            </div>
+        </center>
+    </body>
+</html>

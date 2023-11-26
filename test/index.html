@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="JavaScript">
+        function input(n1, n2, n3, n4)
+        {
+            document.getElementById("output1").innerHTML = n1 + n2;
+            document.getElementById("output2").innerHTML = n1 - n2;
+        }
+    </script>
+</head>
+<body>
+    num 1 :
+    <input type="text" id="num1">
+    <br><br>
+    num 2 :
+    <input type="text" name="" id="num2">
+    <br><br>
+    num 3 :
+    <input type="text" id="num3">
+    <br><br>
+    num 4 :
+    <input type="text" name="" id="num4">
+    <br><br>
+    <input type="button" value="Submit" onclick="input(
+        parseInt(document.getElementById('num2').value),
+        parseInt(document.getElementById('num1').value),
+        parseInt(document.getElementById('num3').value),
+        parseInt(document.getElementById('num4').value)
+    )">
+    <p id="output1"></p>
+    <p id="output2"></p>
+</body>
+</html>

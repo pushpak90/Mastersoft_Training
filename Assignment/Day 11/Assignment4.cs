@@ -30,26 +30,27 @@ namespace Day_11_Assignment
             {
                 for (int j = 0; j < c; j++)
                 {
-                    Console.Write(arr[i, j] + "\t");
+                    Console.Write(arr[i, j] + "\t");       
                 }
                 Console.WriteLine();
             }
 
             //Sum of rows
-            Console.WriteLine();
+            Console.WriteLine("\nPerforming operations : ");
             for (int i = 0; i < r; i++)
             {
                 int sumr = 0;
                 for (int j = 0; j < c; j++)
                 {
+                    Console.Write(arr[i, j] + "\t");
                     sumr = sumr + arr[i, j];
                 }
-                Console.WriteLine("Sum of rows "+ i +" : " + sumr);
+                Console.Write("Sum of rows " + i + " : " + sumr);
+                Console.WriteLine();
             }
-
             //Sum of coloums
             Console.WriteLine();
-            for (int j = 0; j < r; j++)
+            for (int j = 0; j < c; j++)
             {
                 int sumc = 0;
                 for (int i = 0; i < r; i++)
@@ -57,6 +58,32 @@ namespace Day_11_Assignment
                     sumc = sumc + arr[i, j];
                 }
                 Console.WriteLine("Sum of rows " + j + " : " + sumc);
+            }
+
+            //Even
+            Console.Write("\nEven Number : \n");
+            for (int i = 0; i < r; i++)
+            {
+                for (int j = 0; j < c; j++)
+                {
+                    if(arr[i, j]%2 == 0)
+                    {
+                        Console.Write(arr[i, j] + "\t");
+                    }
+                }
+            }
+
+            //Odd 
+            Console.Write("\nOdd Number : \n");
+            for (int i = 0; i < r; i++)
+            {
+                for (int j = 0; j < c; j++)
+                {
+                    if (arr[i, j] % 2 != 0)
+                    {
+                        Console.Write(arr[i, j] + "\t");
+                    }
+                }
             }
 
             Console.ReadKey();

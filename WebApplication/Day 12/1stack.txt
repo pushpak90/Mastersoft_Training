@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace stack_day12
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack s1 = new Stack();
+            //insert element in a stack
+            s1.Push('A');
+            s1.Push('B');
+            s1.Push('C');
+            s1.Push('D');
+            s1.Push('E');
+
+            Console.Write("Element in stack : \t");
+            foreach(char i in s1)
+            {
+                Console.Write(i + "\t");
+            }
+
+            //Remove stack elements 
+            s1.Pop();
+            Console.Write("\nAfter remove elements : \t");
+            foreach (char i in s1)
+            {
+                Console.Write(i + "\t");
+            }
+
+            s1.Pop();
+            Console.Write("\nAfter remove elements : \t");
+            foreach (char i in s1)
+            {
+                Console.Write(i + "\t");
+            }
+            Console.ReadKey();
+        }
+    }
+}

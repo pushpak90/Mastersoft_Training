@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.34112.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "switch_loop", "switch_loop\switch_loop.csproj", "{0BEC7364-2944-4184-93E6-ED7E811B45EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BEC7364-2944-4184-93E6-ED7E811B45EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BEC7364-2944-4184-93E6-ED7E811B45EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BEC7364-2944-4184-93E6-ED7E811B45EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BEC7364-2944-4184-93E6-ED7E811B45EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC7F62B4-91A5-4C38-9D21-87CBA8C2FDAD}
+	EndGlobalSection
+EndGlobal

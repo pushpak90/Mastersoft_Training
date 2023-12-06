@@ -7,19 +7,19 @@ using System.Text;
 
 namespace exception_try_catch_handling
 {
+    class A
+    {
+        public int display(int m1, int m2, int m3, int m4, int m5)
+        {
+
+            return m1 + m2 + m3 + m4 + m5;
+        }
+    }
     class Program
     {
-        public void display(int m1, int m2, int m3, int m4, int m5)
-        {
-            if(m1 == 0 && m2 == 0 && m3 == 0 && m4 == 0 && m5 == 0)
-            {
-                throw new Exception("Marks can not be 0");
-            }
-            //return m1 + m2 + m3 + m4 + m5;
-        }
         static void Main(string[] args)
         {
-            int num1, num2, num3, num4, num5;
+            int num1, num2, num3, num4, num5, sum;
             Console.Write("Enter Mark 1 : ");
             num1 = int.Parse(Console.ReadLine());
             Console.Write("Enter Mark 2 : ");
@@ -39,13 +39,14 @@ namespace exception_try_catch_handling
                 {
                     throw new Exception("Marks can not be 0");
                 }
-                int total = num1 + num2 + num3 + num4 + num5;
-                Console.WriteLine("Sum : " + total);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
             }
+            A a = new A();
+            sum = a.display(num1, num2, num3, num4, num5);
+            Console.WriteLine("Sum : "+sum);
             Console.ReadKey();
         }
     }

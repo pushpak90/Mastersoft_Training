@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,11 +16,11 @@ namespace day15_assignment
         }
 
         protected void Button1_Click(object sender, EventArgs e)
-        { 
+        {
             int roll, m1, m2, m3, m4, m5, total;
             string name, email, mobile, sub, branch, grade;
 
-            if(TextBox1.Text == "" || TextBox2.Text == "" || TextBox3.Text == ""
+            if (TextBox1.Text == "" || TextBox2.Text == "" || TextBox3.Text == ""
                 || TextBox4.Text == "" || TextBox5.Text == "" || TextBox6.Text == ""
                 || TextBox7.Text == "" || TextBox8.Text == "" || TextBox9.Text == ""
                 || TextBox10.Text == "" || TextBox11.Text == "")
@@ -75,7 +75,7 @@ namespace day15_assignment
             string m_name, m_sub, m_grade;
             int m_m1, m_m2, m_m3, m_m4, m_m5;
 
-            if(TextBox2.Text == "" || TextBox5.Text == "")
+            if (TextBox2.Text == "" || TextBox5.Text == "")
             {
                 Response.Write("All filed are required.");
             }

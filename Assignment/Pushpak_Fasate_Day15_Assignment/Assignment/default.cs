@@ -74,33 +74,41 @@ namespace day15_assignment
         {
             string m_name, m_sub, m_grade;
             int m_m1, m_m2, m_m3, m_m4, m_m5;
-            m_name = TextBox2.Text;
-            m_sub = TextBox5.Text;
-            m_m1 = int.Parse(TextBox7.Text);
-            m_m2 = int.Parse(TextBox8.Text);
-            m_m3 = int.Parse(TextBox9.Text);
-            m_m4 = int.Parse(TextBox10.Text);
-            m_m5 = int.Parse(TextBox11.Text);
-            int m_total = m_m1 + m_m2 + m_m3 + m_m4 + m_m5;
-            if (m_total > 250)
+
+            if(TextBox2.Text == "" || TextBox5.Text == "")
             {
-                m_grade = "Grade A";
-            }
-            else if (m_total > 150 && m_total < 250)
-            {
-                m_grade = "Grade B";
-            }
-            else if (m_total > 100 && m_total < 150)
-            {
-                m_grade = "Grade C";
+                Response.Write("All filed are required.");
             }
             else
             {
-                m_grade = "Fail";
+                m_name = TextBox2.Text;
+                m_sub = TextBox5.Text;
+                m_m1 = int.Parse(TextBox7.Text);
+                m_m2 = int.Parse(TextBox8.Text);
+                m_m3 = int.Parse(TextBox9.Text);
+                m_m4 = int.Parse(TextBox10.Text);
+                m_m5 = int.Parse(TextBox11.Text);
+                int m_total = m_m1 + m_m2 + m_m3 + m_m4 + m_m5;
+                if (m_total > 250)
+                {
+                    m_grade = "Grade A";
+                }
+                else if (m_total > 150 && m_total < 250)
+                {
+                    m_grade = "Grade B";
+                }
+                else if (m_total > 100 && m_total < 150)
+                {
+                    m_grade = "Grade C";
+                }
+                else
+                {
+                    m_grade = "Fail";
+                }
+                TextBox13.Text = m_grade;
+                Response.Write("Dear Student,<br>Name : " + m_name + "<br>Subject : " + m_sub + "<br>Total : " + m_total + "<br>Grade : " + m_grade);
+                outputscreen.InnerText = "Thanks for visit my web page.";
             }
-            TextBox13.Text = m_grade;
-            Response.Write("Dear Student,<br>Name : "+m_name+"<br>Subject : "+m_sub+"<br>Total : "+m_total+"<br>Grade : "+m_grade);
-            outputscreen.InnerText = "Thanks for visit my web page.";
         }
     }
 }

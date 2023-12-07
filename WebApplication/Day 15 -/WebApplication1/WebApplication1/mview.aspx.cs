@@ -34,5 +34,10 @@ namespace WebApplication1
         {
             MultiView1.ActiveViewIndex = 2;
         }
+
+        protected void MultiView1_ActiveViewChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

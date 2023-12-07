@@ -20,7 +20,7 @@
         <asp:Button ID="Button4" runat="server" Text="Python" OnClick="Button4_Click" />
         <br />
         <br />
-        <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
+        <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0" OnActiveViewChanged="MultiView1_ActiveViewChanged">
             <asp:View ID="View1" runat="server">
                 C programming Language<br />
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>

@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3FF4C229-9293-4F5A-B5A5-CB332059B8FA}</ProjectGuid>
+    <ProjectGuid>{30FBFE31-B1A2-48DA-A0AA-B790C4C1C3DE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApplication1</RootNamespace>
-    <AssemblyName>WebApplication1</AssemblyName>
+    <RootNamespace>Assignment4</RootNamespace>
+    <AssemblyName>Assignment4</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -67,42 +67,50 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="default.aspx" />
-    <Content Include="finish.aspx" />
-    <Content Include="page2.aspx" />
-    <Content Include="page3.aspx" />
+    <Content Include="exam.aspx" />
+    <Content Include="Generateexam.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="registration.aspx" />
+    <Content Include="Score.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
+    <Compile Include="exam.aspx.cs">
+      <DependentUpon>exam.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
+    <Compile Include="exam.aspx.designer.cs">
+      <DependentUpon>exam.aspx</DependentUpon>
     </Compile>
-    <Compile Include="finish.aspx.cs">
-      <DependentUpon>finish.aspx</DependentUpon>
+    <Compile Include="Generateexam.aspx.cs">
+      <DependentUpon>Generateexam.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="finish.aspx.designer.cs">
-      <DependentUpon>finish.aspx</DependentUpon>
+    <Compile Include="Generateexam.aspx.designer.cs">
+      <DependentUpon>Generateexam.aspx</DependentUpon>
     </Compile>
-    <Compile Include="page2.aspx.cs">
-      <DependentUpon>page2.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="page2.aspx.designer.cs">
-      <DependentUpon>page2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="page3.aspx.cs">
-      <DependentUpon>page3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="page3.aspx.designer.cs">
-      <DependentUpon>page3.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="registration.aspx.cs">
+      <DependentUpon>registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registration.aspx.designer.cs">
+      <DependentUpon>registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Score.aspx.cs">
+      <DependentUpon>Score.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Score.aspx.designer.cs">
+      <DependentUpon>Score.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -112,6 +120,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="upload\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -126,9 +137,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62737</DevelopmentServerPort>
+          <DevelopmentServerPort>52222</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62737/</IISUrl>
+          <IISUrl>http://localhost:52222/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

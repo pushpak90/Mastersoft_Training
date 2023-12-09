@@ -17,7 +17,10 @@ namespace WebApplication1
         protected void Button1_Click(object sender, EventArgs e)
         {
             //file uploading
-            FileUpload1.SaveAs(Server.MapPath("~")+"//upload//"+ FileUpload1.FileName);
+            //FileUpload1.SaveAs(Server.MapPath("~")+"//upload//"+ FileUpload1.FileName);
+            //Image1.ImageUrl = "~/upload/"+FileUpload1.FileName;
+            i
+            Label1.Text = FileUpload1.FileName;
         }
     }
 }

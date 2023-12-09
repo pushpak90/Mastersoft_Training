@@ -21,7 +21,7 @@ namespace WebApplication1
         {
 
             Response.Redirect("page3.aspx?email=" + Request.QueryString["email"] + "&mobile="
-                +Request.QueryString["mobile"]+"&branch="+Label1.Text+"&sub="+TextBox2.Text);
+                +Request.QueryString["mobile"]+"&city="+Request.QueryString["city"] +"&branch="+TextBox1.Text+"&sub="+TextBox2.Text);
         }
     }
 }

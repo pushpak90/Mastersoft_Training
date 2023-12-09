@@ -16,6 +16,11 @@
             <asp:FileUpload ID="FileUpload1" runat="server" />
         </div>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Upload" />
+        <br />
+        <asp:Image ID="Image1" runat="server" Height="294px" Width="280px" />
+        <p>
+            &nbsp;</p>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </form>
 </body>
 </html>

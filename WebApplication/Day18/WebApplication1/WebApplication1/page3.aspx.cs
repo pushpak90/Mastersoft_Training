@@ -16,9 +16,13 @@ namespace WebApplication1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("profile.aspx?email=" + Request.QueryString["email"] + "&mobile="
-                + Request.QueryString["mobile"] + "&branch=" + Request.QueryString["branch"] +
-                "&Sub=" + Request.QueryString["sub"] + "&college="+TextBox1.Text+"&pri="+TextBox2
+            Response.Redirect("profile.aspx?email=" + Request.QueryString["email"] 
+                + "&mobile=" + Request.QueryString["mobile"] +
+                "&city"+Request.QueryString["city"]
+                +"&branch=" + Request.QueryString["branch"] +
+                "&Sub=" + Request.QueryString["sub"] + 
+                "&college="+TextBox1.Text+
+                "&pri="+TextBox2.Text
                 );
         }
     }

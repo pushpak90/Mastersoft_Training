@@ -15,9 +15,9 @@ namespace WebApplication1
             Label2.Text = Request.QueryString["mobile"];
             Label3.Text = Request.QueryString["city"];
             Label4.Text = Request.QueryString["branch"];
-
-            Label5.Text = Request.QueryString["college"];
-            Label6.Text = Request.QueryString["pri"];
+            Label5.Text = Request.QueryString["sub"];
+            Label6.Text = Request.QueryString["college"];
+            Label7.Text = Request.QueryString["pri"];
 
         }
     }

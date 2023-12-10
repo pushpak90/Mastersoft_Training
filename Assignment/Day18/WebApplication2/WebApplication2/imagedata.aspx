@@ -28,6 +28,9 @@
         <br />
         <asp:Image ID="Image1" runat="server" Height="287px" Width="276px" />
         <br />
+        <br />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
+        <br />
     </form>
 </body>
 </html>

@@ -26,5 +26,10 @@ namespace WebApplication2
         {
             Image1.ImageUrl = "~/upload/" + DropDownList1.SelectedValue;
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("preview.aspx?filename=" + DropDownList1.SelectedValue);
+        }
     }
 }

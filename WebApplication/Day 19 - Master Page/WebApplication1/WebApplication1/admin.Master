@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="WebApplication1.admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <style>
+        .nav{
+            margin-right: 400px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        S.B. Jain College
+        <br />
+        <asp:LinkButton  CssClass="nav" ID="LinkButton1" runat="server" PostBackUrl="~/addmission.aspx">Addmission</asp:LinkButton>
+
+        <asp:LinkButton CssClass="nav" ID="LinkButton2" runat="server" PostBackUrl="~/Registration.aspx">Registration</asp:LinkButton>
+
+        <asp:LinkButton CssClass="nav" ID="LinkButton3" runat="server" PostBackUrl="~/Login.aspx">Login</asp:LinkButton>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+    <p>
+        Footer - Developed by Pushpak Fasate</p>
+</body>
+</html>

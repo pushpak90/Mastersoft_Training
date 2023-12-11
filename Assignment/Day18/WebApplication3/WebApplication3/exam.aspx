@@ -55,7 +55,7 @@
                 <asp:ListItem>Night Shift</asp:ListItem>
             </asp:DropDownList>
         </p>
-        <asp:Button ID="Button1" runat="server" Text="Next" />
+        <asp:Button ID="Button1" runat="server" Text="Next" OnClick="Button1_Click" />
     </form>
 </body>
 </html>

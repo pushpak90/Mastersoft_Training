@@ -65,9 +65,7 @@
      <div class="container">
          <asp:Image ID="Image1" runat="server" Height="130px" Width="104px" />
          <br />
-         <asp:Label ID="Label13" runat="server" Text="Label"></asp:Label>
-         <br />
-         <asp:Label ID="Label14" runat="server" Text="Label"></asp:Label>
+         
     <h2>Marksheet </h2>
     <form id="markForm">
       <label for="name">
@@ -78,11 +76,9 @@
 
       <label for="branch">Branch:</label><asp:Label ID="Label9" runat="server" Text="Label"></asp:Label>
 
-      <label for="sem">Semester:</label><asp:Label ID="Label10" runat="server" Text="Label"></asp:Label>
+      <label for="sem">Semester:</label><asp:Label ID="Label11" runat="server" Text="Label"></asp:Label>
 
-      <label for="total">Total Marks:</label><asp:Label ID="Label11" runat="server" Text="Label"></asp:Label>
-
-      <label for="grade">Grade:</label><asp:Label ID="Label12" runat="server" Text="Label"></asp:Label>
+      <label for="grade">Grade:<label for="total">Total Marks:</label></label><asp:Label ID="Label12" runat="server" Text="Label"></asp:Label>
 
      
     </form>

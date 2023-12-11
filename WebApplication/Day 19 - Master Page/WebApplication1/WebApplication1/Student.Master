@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Student.master.cs" Inherits="WebApplication1.Student" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            
+            GNITE College</div>
+        <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/fees.aspx">fees</asp:LinkButton>
+&nbsp;<asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/comp.aspx">Computerlab</asp:LinkButton>
+&nbsp;<asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Login.aspx">Login</asp:LinkButton>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+    <p>
+        Developed by Pushpak</p>
+</body>
+</html>

@@ -15,5 +15,13 @@ namespace WebApplication3
             l_email.Text = Request.QueryString["email"];
             l_mobile.Text = Request.QueryString["mobile"];
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Genrateexam.aspx?branch="+DropDownList1.SelectedValue+"&sem="+
+                DropDownList1.SelectedValue+"&shift="+DropDownList1.SelectedValue+
+                "&name="+Request.QueryString["name"]+"&email="+Request.QueryString["email"]
+                +"&mobile="+Request.QueryString["mobile"]);
+        }
     }
 }

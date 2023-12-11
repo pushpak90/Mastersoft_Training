@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Textscreen.aspx.cs" Inherits="WebApplication1.Textscreen" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="testscreen.aspx.cs" Inherits="WebApplication1.testscreen" %>
 
 <!DOCTYPE html>
 
@@ -6,9 +6,13 @@
 <head runat="server">
     <title></title>
     <style>
+      
+        body{
+            background-color:lightgreen;
+        }
         .col {
             position: absolute;
-            left: 200px
+            left: 200px;
         }
 
         .info {
@@ -65,13 +69,17 @@
         #que10{
             margin:10px;
         }
+        #Score{
+            position:absolute;
+             top: 500px;
+             left : 500px
+        }
         
     </style>
-
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="container">
             <div class="upperd">
                 <div class="col">
                     <h1>Online Exam Module<br />
@@ -200,6 +208,9 @@
                     <asp:Button ID="que10" runat="server" Text="10" OnClick="que10_Click" Height="30px" width="30px"/>
                 </div>
             </div>
+        </div>
+        <div>
+            <asp:Button ID="Score" runat="server" Text="Button" OnClick="Score_Click" />
         </div>
     </form>
 </body>

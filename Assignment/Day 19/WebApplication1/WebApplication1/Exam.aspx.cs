@@ -20,7 +20,7 @@ namespace WebApplication1
             Session["col_name"] = t_college.Text;
             Session["branch"] = t_branch.Text;
             Session["sem"] = DropDownList1.SelectedValue;
-            Response.Redirect("Textscreen.aspx");
+            Response.Redirect("testscreen.aspx");
         }
     }
 }

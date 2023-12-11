@@ -70,7 +70,8 @@
     <Content Include="Default.aspx" />
     <Content Include="Exam.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Textscreen.aspx" />
+    <Content Include="score.aspx" />
+    <Content Include="testscreen.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -96,12 +97,19 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Textscreen.aspx.cs">
-      <DependentUpon>Textscreen.aspx</DependentUpon>
+    <Compile Include="score.aspx.cs">
+      <DependentUpon>score.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Textscreen.aspx.designer.cs">
-      <DependentUpon>Textscreen.aspx</DependentUpon>
+    <Compile Include="score.aspx.designer.cs">
+      <DependentUpon>score.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testscreen.aspx.cs">
+      <DependentUpon>testscreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testscreen.aspx.designer.cs">
+      <DependentUpon>testscreen.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

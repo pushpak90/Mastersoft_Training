@@ -16,6 +16,7 @@ namespace WebApplication1
             branch.Text = (string)Session["branch"];
             sem.Text = (string)Session["sem"];
             //mark.Text = (string)Session["mark"];
+            
             int mark_q = (int)Session["mark"];
             mark.Text = mark_q.ToString();
             Image1.ImageUrl = "~/upload/" + (string)Session["img"];
@@ -32,7 +33,7 @@ namespace WebApplication1
             {
                 grade.Text = "Fail";
             }
-
+            
         }
     }
 }

@@ -5,42 +5,104 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+   
     <style>
-      
+      * {
+           padding: 0;
+           box-sizing: border-box;
+           font-family: 'Poppins', sans-serif;
+}
         body{
             background-color:lightgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url(https://img.playbook.com/GkXdxuPUJybZqdTcLNt124xUnMD_bK19dxy4Z8SczhE/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzJhNWYxODk1/LTE0ZWMtNGNjMi1h/ZGZlLTRkMzQxYWYw/Zjk1OQ);
+            background-size: cover;
+            background-position: center;
         }
         .col {
+            height:150px;
             position: absolute;
-            left: 200px;
+            left: 10px;
+            width:62%;
+            top:10px;
+            color:white;
+            background: transparent;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            color: #fff;
+            border-radius: 10px;
+        }
+        .col h1{
+            margin-left:20%;
         }
 
         .info {
             position: absolute;
-            margin-left: 60%;
+            margin-left: 62%;
+            left:44px;
+            top:15px;
+            color:white;
+            background: transparent;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            color: #fff;
+            border-radius: 10px;
+            width:20%;
+            height:150px;
+
+        }
+        .info label{
+            margin-left:20%;
         }
 
         .imgclas {
             position: absolute;
             margin-left: 80%;
             width: 80%;
+            background: transparent;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            color: #fff;
+            border-radius: 10px;
+            width:20%;
+            height:150px;
+        }
+       
+            
         }
         .upperd{
             width:100%;
             height:200px;
         }
         .allque{
+            
             position:absolute;
-            top:150px;
-            left: 200px;
+            top:200px;
+            left: 13px;
             width:700px;
             height:400px;
-            background-color:Highlight;
+           background: transparent;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            color: #fff;
+            border-radius: 10px;
+            width:75%;
+            height:300px;
         }
         .allbtn{
             position : absolute;
-            margin-left : 70%;
-            top : 150px
+            left : 80%;
+            top : 250px;
+            color:white;
+            background: transparent;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            color: #fff;
+            border-radius: 10px;
+            height:250px;
         }
         #que1{
             margin:10px;
@@ -77,12 +139,28 @@
              top: 500px;
              left : 500px
         }
+       #Score {
+            width: 20%;
+            height: 45px;
+            border-radius: 40px;
+            border: none;
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+            top:550px;
+            position:absolute;
+            border: 2px solid rgba(255, 255, 255, .2);
+        }
+}
         
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container">
+        <div class="wrapper">
             <div class="upperd">
                 <div class="col">
                     <h1>Online Exam Module<br />
@@ -90,18 +168,19 @@
                     </h1>
                 </div>
                 <div class="info">
-                    Name :
+                    
+                    <label style="top:10px">
+                    <br />
+                    Name :</label>
                     <asp:Label ID="l_name" runat="server" Text="Label"></asp:Label><br />
-                    Email :
+                    <label>Email :</label>
                     <asp:Label ID="l_email" runat="server" Text="Label"></asp:Label><br>
-                    Branch :
+                    <label>Branch :</label>
                     <asp:Label ID="l_branch" runat="server" Text="Label"></asp:Label><br>
-                    Semester :
+                    <label>Semester :</label>
                     <asp:Label ID="l_sem" runat="server" Text="Label"></asp:Label><br>
                 </div>
-                <div class="imgclas">
-                    <asp:Image ID="Image1" runat="server" Width="100px" Height="100px" />
-                </div>
+                    <asp:Image CssClass="image" style="position:absolute; left:89%; top:28px; height: 134px;" ID="Image1" runat="server" Width="117px" />
             </div>
             <div>
                 <div class="allque">
@@ -213,7 +292,7 @@
             </div>
         </div>
         <div>
-            <asp:Button ID="Score" runat="server" Text="Button" OnClick="Score_Click" />
+            <asp:Button ID="Score" Class="btn" runat="server" Text="Button" OnClick="Score_Click" />
         </div>
     </form>
 </body>

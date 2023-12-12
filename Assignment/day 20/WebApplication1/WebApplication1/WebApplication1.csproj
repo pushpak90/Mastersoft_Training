@@ -71,6 +71,7 @@
     <Content Include="Exam.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="score.aspx" />
+    <Content Include="Style.css" />
     <Content Include="testscreen.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>

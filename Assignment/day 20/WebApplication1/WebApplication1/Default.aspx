@@ -5,78 +5,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style>
-      body {
-      font-family: Arial, sans-serif;
-      background-color: lightblue;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      }
-      .container {
-      background-color:lightcoral;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 400px;
-      text-align: center;
-      border-style: solid;
-      }
-      h2 {
-      color: #333;
-      }
-      .tlabel {
-      display: block;
-      margin: 10px 0;
-      color: #555;
-      }
-       button{
-           padding: 10px 20px;
-      background-color: #4caf50;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 10px;
-       }
-    </style>
+    <link type="text/css" rel="stylesheet" href="Style.css" />
 </head>
 <body>
+    <div class="wrapper">
     <form id="form1" runat="server">
-        <div class="container">
-
-            <h2><center>Registration Form</center></h2>
+        
+            
+            <h2>Registration Form</h2>
         <p>
-            <label>Enter Name :</label>
-            <asp:TextBox ID="t_name" runat="server" class="tlable"></asp:TextBox>
+            <div class="input-box">
+            <asp:TextBox placeholder="Name" ID="t_name" runat="server" class="tlable"></asp:TextBox>
+                </div>
         </p>
         <p>
-            <label>Enter Email ID :</label>
-            <asp:TextBox ID="t_email" runat="server" class="tlable"></asp:TextBox>
+            <div class="input-box">
+            <asp:TextBox  placeholder="Enter Email ID :" ID="t_email" runat="server" class="tlable"></asp:TextBox>
+                </div>
         </p>
         <p>
-            <label>Enter Password :</label>
-            <asp:TextBox ID="t_password" runat="server" class="tlable"></asp:TextBox>
+            <asp:TextBox placeholder="Enter Password :"  ID="t_password" runat="server" class="tlable"></asp:TextBox>
         </p>
         <p>
-            <label>Enter Mobile :</label>
-            <asp:TextBox ID="t_mobile" runat="server" class="tlable"></asp:TextBox>
+            <div class="input-box">
+            <asp:TextBox placeholder="Enter Mobile :" ID="t_mobile" runat="server" class="tlable"></asp:TextBox>
+                </div>
         </p>
         <p>
-            <label>Upload Photo :</label>
-            <asp:FileUpload ID="img" runat="server" accept=".png,.jpg,.jpeg,.gif"/>
+            <div class="input-box">
+            <asp:FileUpload placeholder="Upload Photo :" class="btn" ID="img" runat="server" accept=".png,.jpg,.jpeg,.gif"/>
+                </div>
         </p>
         <p>
-            <label>Date of Registration :</label>
-            <asp:TextBox ID="T_date" runat="server" class="tlable"></asp:TextBox>
+            <div class="input-box">
+            <asp:TextBox  ID="T_date" runat="server" class="tlable"></asp:TextBox>
+                </div>
         </p>
         <p>
-            <asp:Button ID="Btn_login"  runat="server" Text="Login Button" OnClick="Btn_login_Click" />
+            <asp:Button ID="Btn_login" class="btn" runat="server" Text="Login Button" OnClick="Btn_login_Click" />
         </p>
-            </div>
+                
+         
        
     </form>
+       </div>
 </body>
 </html>

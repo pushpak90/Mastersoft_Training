@@ -5,47 +5,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style>
-        body {
-      font-family: Arial, sans-serif;
-      background-color: lightblue;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      }
-      .container {
-      background-color:lightcoral;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 400px;
-      text-align: center;
-      border-style: solid;
-      }
-    </style>
+    <link type="text/css" rel="stylesheet" href="Style.css" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    
         <div>
         </div>
         
 
-        <div class="container">
-
+        <div class="wrapper">
+            <form id="form1" runat="server">
             <h2><center>Login</center></h2>
         <p>
-            <label>Enter Email :</label>
-            <asp:TextBox ID="t_email" runat="server" class="tlable"></asp:TextBox>
+            <div class="input-box">
+            
+            <asp:TextBox ID="t_email" placeholder="Enter Email" runat="server" class="tlable"></asp:TextBox>
+                </div>
         </p>
         <p>
-            <label>Enter Password:</label>
-            <asp:TextBox ID="t_password" runat="server" class="tlable"></asp:TextBox>
+             <div class="input-box">
+            <asp:TextBox ID="t_password" placeholder="Enter Password" runat="server" class="tlable"></asp:TextBox>
+                 </div>
         </p>
         <p>
-            <asp:Button ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" />
+            <asp:Button ID="Button1" class="btn" runat="server" Text="Login" OnClick="Button1_Click" />
+             </form>
             </div>
-    </form>
+   
 </body>
 </html>

@@ -24,7 +24,7 @@
         </p>
         <p>
              <div class="input-box">
-            <asp:TextBox ID="t_password" placeholder="Enter Password" runat="server" class="tlable"></asp:TextBox>
+            <asp:TextBox ID="t_password" TextMode="Password" placeholder="Enter Password" runat="server" class="tlable"></asp:TextBox>
                  </div>
         </p>
         <p>

@@ -11,22 +11,32 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Button1.Attributes.Add("onclick", "javascript: return NotEmptyPasswordEmail()");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Session["email"] = t_email.Text;
-            ViewState["password"] = t_password.Text;
+            
             try
             {
-                if ((string)Session["email"] == Request.QueryString["email_q"] && (string)Session["pass"] == ViewState["password"].ToString())
+                if (txtEmail.Text == "" || txtPassword.Text == "")
                 {
-                    Response.Redirect("Exam.aspx");
+                    Response.Write("All field are require");
                 }
                 else
                 {
-                    Response.Write("Invalid User");
+                    Session["email"] = txtEmail.Text;
+                    ViewState["password"] = txtPassword.Text;
+                    if ((string)Session["email"] == Request.QueryString["email_q"] && (string)Session["pass"] == ViewState["password"].ToString())
+                    {
+                        Response.Redirect("Exam.aspx");
+                    }
+                    else
+                    {
+                        Response.Write("Invalid User");
+                    }
                 }
+                
             }
             catch(Exception p1)
             {

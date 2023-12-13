@@ -11,24 +11,24 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            T_date.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            ViewState["email"] = t_email.Text;
+            txtDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            ViewState["email"] = txtEmail.Text;
         }
         
         protected void Btn_login_Click(object sender, EventArgs e)
         {
             try
             {
-                if (t_name.Text == "" && t_email.Text == "" && t_password.Text == "" && t_mobile.Text == "")
+                if (txtName.Text == "" && txtEmail.Text == "" && txtPassword.Text == "" && txtMobile.Text == "")
                 {
                     Response.Write("All File Are require");
                 }
                 else
                 {
-                    Session["name"] = t_name.Text;
+                    Session["name"] = txtName.Text;
                    
-                    Session["pass"] = t_password.Text;
-                    Session["mobile"] = t_mobile.Text;
+                    Session["pass"] = txtPassword.Text;
+                    Session["mobile"] = txtMobile.Text;
                     img.SaveAs(Server.MapPath("~") + "//upload//" + img.FileName);
                     Session["img"] = img.FileName;
 
@@ -38,7 +38,7 @@ namespace WebApplication1
                     }
                     else
                     {
-                        Response.Redirect("Login.aspx?email_q=" + t_email.Text);
+                        Response.Redirect("Login.aspx?email_q=" + txtEmail.Text);
                     }
                     
                 }

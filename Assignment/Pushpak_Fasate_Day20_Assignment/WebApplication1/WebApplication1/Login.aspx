@@ -6,6 +6,20 @@
 <head runat="server">
     <title></title>
     <link type="text/css" rel="stylesheet" href="Style.css" />
+    <script type="text/javascript" language="JavaScript">
+        function NotEmptyPasswordEmail()
+        {
+            if (document.getElementById("<%=txtEmail.ClientID%>").value.trim() == "")
+            {
+                alert("Please Provide Email*");
+                return false;
+            }
+            else if (document.getElementById("<%=txtPassword.ClientID%>").value.trim() == "")
+            {
+                alert("Please Provid Passsword*");
+            }
+        }
+    </script>
 </head>
 <body>
     
@@ -19,12 +33,12 @@
         <p>
             <div class="input-box">
             
-            <asp:TextBox ID="t_email" placeholder="Enter Email" runat="server" class="tlable"></asp:TextBox>
+            <asp:TextBox ID="txtEmail" placeholder="Enter Email" runat="server" class="tlable"></asp:TextBox>
                 </div>
         </p>
         <p>
              <div class="input-box">
-            <asp:TextBox ID="t_password" TextMode="Password" placeholder="Enter Password" runat="server" class="tlable"></asp:TextBox>
+            <asp:TextBox ID="txtPassword" TextMode="Password" placeholder="Enter Password" runat="server" class="tlable"></asp:TextBox>
                  </div>
         </p>
         <p>

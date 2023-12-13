@@ -12,7 +12,7 @@ namespace WebApplication1Valid
         protected void Page_Load(object sender, EventArgs e)
         {
             //Access javaScript method 
-            btnSubmit.Attributes.Add("onclick", "javascript: return validationCheck()");
+            btnSubmit.Attributes.Add("onclick", "javascript : return validationCheck()");
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

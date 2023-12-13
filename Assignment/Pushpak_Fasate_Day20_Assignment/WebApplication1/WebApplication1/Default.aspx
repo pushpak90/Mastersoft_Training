@@ -23,7 +23,8 @@
         <p>
             <div class="input-box">
             <asp:TextBox  placeholder="Enter Email ID :" ID="txtEmail" runat="server" class="tlable" ControlToValidate="txtemail"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter Email*" CausesValidation="True" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter Email*" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Email is not valid" ControlToValidate="txtEmail" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"></asp:RegularExpressionValidator>
                 </div>
         </p>
         <p>

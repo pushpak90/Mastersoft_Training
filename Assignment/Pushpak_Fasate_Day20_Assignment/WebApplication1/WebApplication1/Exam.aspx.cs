@@ -13,12 +13,13 @@ namespace WebApplication1
         {
             t_name.Text = (string)Session["name"];
             t_email.Text = (string)Session["email"];
+            Button1.Attributes.Add("onclick", "javascript: return choice()");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Session["col_name"] = t_college.Text;
-            Session["branch"] = t_branch.Text;
+            Session["col_name"] = txtCollege.Text;
+            Session["branch"] = txtBranch.Text;
             Session["sem"] = DropDownList1.SelectedValue;
             Response.Redirect("testscreen.aspx");
         }

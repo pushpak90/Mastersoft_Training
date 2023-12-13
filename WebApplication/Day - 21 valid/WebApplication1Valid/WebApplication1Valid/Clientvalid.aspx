@@ -25,10 +25,10 @@
         function isValidUser()
         {
             var id;
-            var temp = document.getElementById(<%=txtUsername.ClientID%>);
+            var temp = document.getElementById("<%=txtUsername.ClientID%>");
             id = temp.value;
             if (id == "") {
-                return ("Please enter user name");
+                return ("Please enter user name\n");
             }
             else
             {
@@ -38,10 +38,10 @@
         function isValidFname()
         {
             var id;
-            var temp = document.getElementById(<% =txtFname.ClientID %>);
+            var temp = document.getElementById("<%=txtFname.ClientID%>");
             id = temp.value;
             if (id == "") {
-                return ("Please enter First name");
+                return ("Please enter First name\n");
             }
             else
             {
@@ -51,10 +51,10 @@
         function isValidLname()
         {
             var id;
-            var temp = document.getElementById(<%=txtLname.ClientID%>);
+            var temp = document.getElementById("<%=txtLname.ClientID%>");
             id = temp.value;
             if (id == "") {
-                return ("Please enter First name");
+                return ("Please enter Last name");
             }
             else
             {

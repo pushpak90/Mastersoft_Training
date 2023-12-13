@@ -6,6 +6,16 @@
 <head runat="server">
     <title></title>
      <link type="text/css" rel="stylesheet" href="Style.css" /> 
+    <script language="JavaScript" type="text/javascript">
+        function choice()
+        {
+            var x = document.getElementById("<%=DropDownList1.ClientID%>").value;
+            if (x == "Select") {
+                alert("Provide Semester");
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
     
@@ -24,11 +34,13 @@
         </p>
             <p>
          
-            <asp:TextBox ID="t_college" placeholder="Enter College"  runat="server" class="tlable"></asp:TextBox>
+            <asp:TextBox ID="txtCollege" placeholder="Enter College"  runat="server" class="tlable"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter College Name*" ControlToValidate="txtCollege"></asp:RequiredFieldValidator>
         </p>
             <p>
            
-            <asp:TextBox ID="t_branch" placeholder="Enter Branch" runat="server" class="tlable"></asp:TextBox>
+            <asp:TextBox ID="txtBranch" placeholder="Enter Branch" runat="server" class="tlable"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter Branch Name*" ControlToValidate="txtBranch"></asp:RequiredFieldValidator>
         </p>
              <label class="labelcls">Semester :</label>
             <asp:DropDownList ID="DropDownList1" class="btn" runat="server">

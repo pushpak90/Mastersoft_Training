@@ -12,7 +12,6 @@
             if (document.getElementById("<%=txtEmail.ClientID%>").value.trim() == "")
             {
                 alert("Please Provide Email*");
-                return false;
             }
             else if (document.getElementById("<%=txtPassword.ClientID%>").value.trim() == "")
             {

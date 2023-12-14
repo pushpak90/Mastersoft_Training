@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6C4E207C-B971-4B5E-A2C8-7CDC22FDF35D}</ProjectGuid>
+    <ProjectGuid>{D967D68F-CEB0-4961-A9F8-EF2CDE097CEC}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApplication1</RootNamespace>
-    <AssemblyName>WebApplication1</AssemblyName>
+    <RootNamespace>Assignment_1</RootNamespace>
+    <AssemblyName>Assignment_1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -67,44 +67,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\college.mdf" />
-    <Content Include="App_Data\college_log.ldf">
-      <DependentUpon>college.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Employee.mdf" />
-    <Content Include="App_Data\Employee_log.ldf">
-      <DependentUpon>Employee.mdf</DependentUpon>
-    </Content>
-    <Content Include="default.aspx" />
-    <Content Include="myclass.aspx" />
-    <Content Include="reg.aspx" />
+    <Content Include="home.aspx" />
+    <Content Include="login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="College.cs" />
-    <Compile Include="default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="myclass.aspx.cs">
-      <DependentUpon>myclass.aspx</DependentUpon>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="myclass.aspx.designer.cs">
-      <DependentUpon>myclass.aspx</DependentUpon>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reg.aspx.cs">
-      <DependentUpon>reg.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="reg.aspx.designer.cs">
-      <DependentUpon>reg.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="student.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -128,9 +110,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63811</DevelopmentServerPort>
+          <DevelopmentServerPort>50237</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:63811/</IISUrl>
+          <IISUrl>http://localhost:50237/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

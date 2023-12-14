@@ -12,6 +12,7 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            que2.Attributes.Add("onclick", "javascript : return choice()");
             col_name.Text = (string)Session["col_name"];
             l_name.Text = (string)Session["name"];
             l_email.Text = (string)Session["email"];

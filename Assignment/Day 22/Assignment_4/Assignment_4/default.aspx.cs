@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Assignment_3
+namespace Assignment_4
 {
     public partial class _default : System.Web.UI.Page
     {
@@ -16,12 +16,10 @@ namespace Assignment_3
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            info c1 = new info();
-            lblResult.Text = c1.input(txtName.Text, txtCity.Text, txtCollege.Text, txtBranch.Text, 
-                int.Parse(txtPer.Text));
-            
-            lblgrade.Text = c1.grade;
-
+            Student s1 = new Student();
+            lblResult.Text = s1.display(txtName.Text, txtCollege.Text, txtSubject.Text, txtBranch.Text);
+            lblPer.Text = s1.cal_grade(int.Parse(txtPer.Text));
+            lblGarde.Text = s1.grade;
         }
     }
 }

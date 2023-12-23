@@ -1,0 +1,193 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="deptmaster.Master.cs" Inherits="WebApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Style.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 14px;
+            background-color: lightpink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #e96443; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #904e95, #e96443);
+            background: linear-gradient(to right, #904e95, #e96443);
+        }
+
+        .container {
+            position: absolute;
+            width: 100%;
+            height:100px;
+            top: 10px;
+            left: 00px;
+            display: flex;
+            padding: 20px;
+            border-radius: 5px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+            .container li {
+                margin: 0 25px;
+            }
+
+                .container li a {
+                    font-size: 2em;
+                    transition: 0.5s;
+                    color: #000;
+                }
+
+            .container:hover li a {
+                color: #000;
+            }
+
+                .container:hover li a:not(:hover) {
+                    color: #000;
+                    opacity: 0.3;
+                }
+
+        .button-64 {
+            left:300px
+            align-items: center;
+            background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+            border: 0;
+            border-radius: 8px;
+            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            display: flex;
+            font-family: Phantomsans, sans-serif;
+            font-size: 20px;
+            justify-content: center;
+            line-height: 1em;
+            max-width: 100%;
+            min-width: 140px;
+            padding: 3px;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+            .button-64:active,
+            .button-64:hover {
+                outline: 0;
+            }
+
+            .button-64 span {
+                padding: 16px 24px;
+                border-radius: 6px;
+                width: 100%;
+                height: 100%;
+                transition: 300ms;
+            }
+
+            .button-64:hover span {
+                background: none;
+            }
+
+        @media (min-width: 768px) {
+            .button-64 {
+                font-size: 24px;
+                min-width: 196px;
+            }
+        }
+
+        .div1 {
+            position: absolute;
+            top: 25%;
+            padding: 100px;
+            left: 35%;
+        }
+
+        .info {
+            position: absolute;
+            top: 120px;
+            left: 550px;
+            font-size: 14px;
+        }
+        .namedept{
+            position:absolute;
+            top:40px;
+            left:90%;
+        }
+        .btnhlod{
+            position:absolute;
+            left:30%;
+            /*height:200px*/
+        }
+        .btnhlod1{
+            position:absolute;
+            left:60%;
+            /*height:200px*/
+        }
+        .h4stu{
+            position:absolute;
+            top:50px;
+            left:20px
+        }
+        
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+         
+        <ul class="container">
+           
+            <li>
+                <div class="btnhlod">
+                <asp:LinkButton ID="LinkButton2" runat="server" class="button-64" PostBackUrl="~/Deptmark.aspx">
+                <span class="text">
+                    <center>Mark Allotement</center>
+                </span>
+                </asp:LinkButton>
+                    </div>
+            </li>
+            <li>
+                <div class="btnhlod1">
+                <asp:LinkButton ID="LinkButton1" runat="server" class="button-64" PostBackUrl="~/depmarkreport.aspx">
+                <span class="text">
+                    <center>Mark Report</center>
+                </span>
+                </asp:LinkButton>
+                    </div>
+            </li>
+            
+        </ul>
+        <h1 class="h4stu">
+                <center>Welcome Student Portal</center>
+            </h1>
+        <div class="namedept">
+            
+        <label>Name :
+                <asp:Label ID="lblName" runat="server" Text="Label"></asp:Label></label><br />
+            <label>Department :
+                <asp:Label ID="lblDept" runat="server" Text="Label"></asp:Label></label>
+        </div>
+        <div class="info">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    
+</body>
+</html>

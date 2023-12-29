@@ -9,6 +9,7 @@
     <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet" />
 </head>
 <body>
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     <div class="container">
     <div class="content">
        <img src="https://res.cloudinary.com/debbsefe/image/upload/f_auto,c_fill,dpr_auto,e_grayscale/image_fz7n7w.webp" alt="header-image" class="cld-responsive">

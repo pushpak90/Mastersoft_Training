@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Collegeadmin.Master" AutoEventWireup="true" CodeBehind="departmentuser.aspx.cs" Inherits="Online_Student_Complained.departmentuser" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student.Master" AutoEventWireup="true" CodeBehind="studentcomplaint.aspx.cs" Inherits="Online_Student_Complained.studentcomplaint" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -6,47 +6,48 @@
     <div class="form_wrapper">
         <div class="form_container">
             <div class="title_container">
-                <h2>College Login</h2>
+                <h2>create Department</h2>
             </div>
             <div class="row clearfix">
                 <div class="">
                     <div class="input_field">
                         <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                        College Name :
-                        <asp:TextBox ID="txtname" runat="server" placeholder="Enter College" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox ID="txtCollegeName" runat="server" placeholder="Enter College Name" ReadOnly="true"></asp:TextBox>
                     </div>
                     <div class="input_field">
                         <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                        College Code :
-                        <asp:TextBox ID="txtcode" runat="server" placeholder="Enter College" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox ID="txtStudentName" runat="server" placeholder="Enter Student Name" ReadOnly="true"></asp:TextBox>
                     </div>
                     <div class="input_field">
                         <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                        Department Name :
-                        <asp:DropDownList ID="ddlDept" runat="server" OnSelectedIndexChanged="Page_Load"></asp:DropDownList>
+                        <asp:TextBox ID="txtEmail" runat="server" placeholder="Enter Email" ReadOnly="true"></asp:TextBox>
                     </div>
                     <div class="input_field">
                         <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                        <asp:TextBox ID="txtFaculty" runat="server" placeholder="Enter Name/Faculty Name"></asp:TextBox>
+                        <asp:TextBox ID="txtbranch" runat="server" placeholder="Enter Branch" ReadOnly="true"></asp:TextBox>
                     </div>
                     <div class="input_field">
                         <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                        <asp:TextBox ID="txtUser" runat="server" placeholder="Enter User ID"></asp:TextBox>
+                        <asp:DropDownList ID="ddlcomp" runat="server">
+                            <asp:ListItem>Select Complaint</asp:ListItem>
+                            <asp:ListItem>Account</asp:ListItem>
+                            <asp:ListItem>Exam</asp:ListItem>
+                            <asp:ListItem>SPORT</asp:ListItem>
+                            <asp:ListItem>Admission</asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                     <div class="input_field">
                         <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                        <asp:TextBox ID="txtpass" runat="server" placeholder="Enter Password" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="txtMessage" runat="server" placeholder="Enter Messgae"></asp:TextBox>
                     </div>
                     <div class="input_field">
                         <span><i aria-hidden="true" class="fa fa-lock"></i></span>
                         <asp:TextBox ID="txtDate" runat="server" placeholder="Enter Date"></asp:TextBox>
                     </div>
-                    <asp:Button ID="btnLogin" class="button" runat="server" Text="Submit" OnClick="btnLogin_Click1" />
+                    <asp:Button ID="btnSubmit" class="button" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
                     <br />
-                    <asp:Button ID="btnNew" class="button" runat="server" Text="Show" OnClick="btnNew_Click" />
+                    <asp:Button ID="btnShow" class="button" runat="server" Text="Show" OnClick="btnShow_Click" />
                     <br />
-                    <asp:Label ID="Label1" runat="server" Text="Select Department Name : " Visible="false"></asp:Label>
-                    <asp:DropDownList ID="DropDownList1" runat="server" Visible="false"></asp:DropDownList>
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
                         <Columns>
                             <asp:TemplateField HeaderText="Sr No.">
@@ -56,42 +57,37 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="College Name">
                                 <ItemTemplate>
-                                    <asp:TextBox ID="txtcolname" runat="server" Text='<%# Eval("Collegename") %>'></asp:TextBox>
+                                    <asp:Label ID="lblcolname" runat="server" Text='<%# Eval("Collegename") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-
-                            <asp:TemplateField HeaderText="Department">
+                            <asp:TemplateField HeaderText="Student Name">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblDept" runat="server" Text='<%# Eval("Deptname") %>'></asp:Label>
+                                    <asp:Label ID="lblSname" runat="server" Text='<%# Eval("Sname") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-
-                            <asp:TemplateField HeaderText="Faculty Name">
+                            <asp:TemplateField HeaderText="Branch">
                                 <ItemTemplate>
-                                    <asp:TextBox ID="txtFname" runat="server" Text='<%# Eval("Username") %>'></asp:TextBox>
+                                    <asp:Label ID="lblBranch" runat="server" Text='<%# Eval("Branch") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-
-                            <asp:TemplateField HeaderText="User Id">
+                            <asp:TemplateField HeaderText="Complaint">
                                 <ItemTemplate>
-                                    <asp:TextBox ID="txtId" runat="server" Text='<%# Eval("UserId") %>'></asp:TextBox>
+                                    <asp:Label ID="txtComplaint" runat="server" Text='<%# Eval("Complainto") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-
-                            <asp:TemplateField HeaderText="Password">
+                            <asp:TemplateField HeaderText="Message">
                                 <ItemTemplate>
-                                    <asp:TextBox ID="txtpass" runat="server" Text='<%# Eval("Userpass") %>'></asp:TextBox>
+                                    <asp:Label ID="lblmsg" runat="server" Text='<%# Eval("msg") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-
-                            <asp:TemplateField HeaderText="Action">
+                            <asp:TemplateField HeaderText="Date">
                                 <ItemTemplate>
-                                    <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" />
+                                    <asp:Label ID="lblDate" runat="server" Text='<%# Eval("C_date") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Action">
                                 <ItemTemplate>
-                                    <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click"/>
+                                    <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>

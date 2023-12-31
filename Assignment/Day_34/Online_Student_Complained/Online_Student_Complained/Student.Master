@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Student.master.cs" Inherits="Online_Student_Complained.Student" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Style.css" />
+     <style>
+     .txtcollegename
+     {
+         position: absolute;
+         left: 900px;
+     }
+ </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <center>
+                <h1>Online Student Complaint Handling Portal</h1>
+            </center>
+            <center>
+                <h1>---------------------------------------</h1>
+            </center>
+            <div class="down_nav">
+                <ul>
+                    <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/studentcomplaint.aspx" ForeColor="Black"> Complaint Form</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Black"> Complaint Status</asp:LinkButton>
+                </ul>
+                <b>Welcome : </b>
+                <label class="txtcollegename">
+                    <asp:Label ID="lblemail" runat="server" Text="Label"></asp:Label></label>
+                <asp:Button ID="btnLogout" runat="server" class="book_btn" Text="Logout" OnClick="btnLogout_Click" />
+            </div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

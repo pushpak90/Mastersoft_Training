@@ -35,6 +35,7 @@ namespace Online_Student_Complained
             {
                 if (_reader["Collegecode"].ToString() == f_email && _reader["Passwo"].ToString() == f_password)
                 {
+                    HttpContext.Current.Session["s_collegeCode"] = _reader["Collegecode"].ToString();
                     HttpContext.Current.Session["s_col"] = _reader["Collegename"].ToString();
                     HttpContext.Current.Session["s_email"] = _reader["Email"].ToString();
                     HttpContext.Current.Session["s_pass"] = _reader["Passwo"].ToString();

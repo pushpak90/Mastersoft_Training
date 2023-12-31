@@ -75,6 +75,10 @@
     <Content Include="departmentuser.aspx" />
     <Content Include="News.aspx" />
     <Content Include="Report.aspx" />
+    <Content Include="studentcomplaint.aspx" />
+    <Content Include="studentpanel.aspx" />
+    <Content Include="stulogin.aspx" />
+    <Content Include="stureg.aspx" />
     <Content Include="Style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -132,6 +136,7 @@
     <Compile Include="dept.cs" />
     <Compile Include="deptuser.cs" />
     <Compile Include="login_de.cs" />
+    <Compile Include="logstu.cs" />
     <Compile Include="News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -139,6 +144,7 @@
     <Compile Include="News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
     </Compile>
+    <Compile Include="newspage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report.aspx.cs">
       <DependentUpon>Report.aspx</DependentUpon>
@@ -147,10 +153,48 @@
     <Compile Include="Report.aspx.designer.cs">
       <DependentUpon>Report.aspx</DependentUpon>
     </Compile>
+    <Compile Include="stucomp.cs" />
+    <Compile Include="Student.Master.cs">
+      <DependentUpon>Student.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student.Master.designer.cs">
+      <DependentUpon>Student.Master</DependentUpon>
+    </Compile>
+    <Compile Include="studentcomplaint.aspx.cs">
+      <DependentUpon>studentcomplaint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentcomplaint.aspx.designer.cs">
+      <DependentUpon>studentcomplaint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="studentpanel.aspx.cs">
+      <DependentUpon>studentpanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentpanel.aspx.designer.cs">
+      <DependentUpon>studentpanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student_reg.cs" />
+    <Compile Include="stulogin.aspx.cs">
+      <DependentUpon>stulogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="stulogin.aspx.designer.cs">
+      <DependentUpon>stulogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="stureg.aspx.cs">
+      <DependentUpon>stureg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="stureg.aspx.designer.cs">
+      <DependentUpon>stureg.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Collegeadmin.Master" />
     <None Include="packages.config" />
+    <Content Include="Student.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -173,7 +217,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49431</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49431/</IISUrl>
+          <IISUrl>http://localhost:59535/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

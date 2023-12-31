@@ -57,7 +57,7 @@ namespace Online_Student_Complained
             return "Done";
         }
 
-        public string show_grid()
+        public string show_grid(string f_colname, string f_colcode)
         {
             string path = ConfigurationManager.AppSettings["collegeDB"];
             conn = new SqlConnection(path);
@@ -65,7 +65,10 @@ namespace Online_Student_Complained
 
             cmd = new SqlCommand("show_grid", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            
+
+            cmd.Parameters.AddWithValue("Collegename1", f_colname);
+            cmd.Parameters.AddWithValue("@Collegecode1", f_colcode);
+
             rdr = cmd.ExecuteReader();
 
             return "Done";

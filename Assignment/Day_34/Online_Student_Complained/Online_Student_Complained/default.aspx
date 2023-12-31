@@ -24,7 +24,7 @@
                     <asp:Button ID="btnCollege" runat="server" Text="College" ForeColor="#04AA6D" OnClick="btnCollege_Click"/>
                 </div>
                 <div class="btn2">
-                    <asp:Button ID="btnStudent" runat="server" Text="Student" ForeColor="#04AA6D"/>
+                    <asp:Button ID="btnStudent" runat="server" Text="Student" ForeColor="#04AA6D" OnClick="btnStudent_Click" />
                 </div>
             </div>
         </div>

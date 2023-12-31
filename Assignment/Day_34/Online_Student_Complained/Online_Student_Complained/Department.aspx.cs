@@ -29,10 +29,11 @@ namespace Online_Student_Complained
         protected void btnNew_Click(object sender, EventArgs e)
         {
             dept d1 = new dept();
-            d1.show_grid();
+            d1.show_grid(txtCollegename.Text, txtCode.Text);
             GridView1.DataSource = d1.rdr;
             GridView1.DataBind();
             d1.rdr.Close();
+            btnDelete.Visible = true;
         }
     }
 }

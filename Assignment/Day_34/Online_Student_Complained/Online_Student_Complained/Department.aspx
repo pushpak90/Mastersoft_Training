@@ -26,24 +26,37 @@
                     <br />
                     <asp:Button ID="btnNew" class="button" runat="server" Text="Show" OnClick="btnNew_Click" />
                     <br />
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" ForeColor="Black" GridLines="Vertical">
+                    <asp:Button ID="btnDelete" class="button" runat="server" Text="Delete" OnClick="btnNew_Click" Visible="false" />
+                    <br />
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
+                        BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px"
+                        CellPadding="4" ForeColor="Black" GridLines="Vertical">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:TemplateField HeaderText="Action">
+                            <asp:TemplateField HeaderText="College Code">
                                 <EditItemTemplate>
-                                    <asp:CheckBox ID="CheckBox1" runat="server" Visible="true"/>
+                                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Collegecode") %>'></asp:TextBox>
                                 </EditItemTemplate>
                                 <ItemTemplate>
-                                    <asp:CheckBox ID="CheckBox1" runat="server" Visible="true" />
+                                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("Collegecode") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Sr No.">
+                            <asp:TemplateField HeaderText="Department Name">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Deptname") %>'></asp:TextBox>
+                                </EditItemTemplate>
                                 <ItemTemplate>
-                                    <%# Container.DataItemIndex+1 %>
+                                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("Deptname") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:BoundField DataField="Collegecode" HeaderText="College Code" />
-                            <asp:BoundField DataField="Deptname" HeaderText="Department Name" />
+                            <asp:TemplateField HeaderText="Select Data">
+                                <EditItemTemplate>
+                                    <asp:CheckBox ID="CheckBox1" runat="server" />
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:CheckBox ID="CheckBox1" runat="server" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
                         </Columns>
                         <FooterStyle BackColor="#CCCC99" />
                         <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />

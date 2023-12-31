@@ -8,6 +8,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
+using System.Security.Cryptography;
 
 
 namespace Online_Student_Complained
@@ -19,13 +21,35 @@ namespace Online_Student_Complained
         SqlDataReader rdr;
         protected void Page_Load(object sender, EventArgs e)
         {
-            deptuser du = new deptuser();
-            du.page((string)Session["s_colname"], (string)Session["s_colcode"]);
-            txtcode.Text = du.p_collegeCode;
-            txtname.Text = du.p_colName;
-            ddlDept.Items.Add(du.p_dept);
-            txtDate.Text = DateTime.Now.ToString("dd/MMM/yyyy");
+            if(!IsPostBack)
+            {
+                dept d1 = new dept();
+                d1.read((string)Session["s_email"], (string)Session["s_pass"]);
+                txtcode.Text = d1.p_collegeCode;
+                txtname.Text = d1.p_colName;
+                ddl();
+                txtDate.Text = DateTime.Now.ToString("dd/MMM/yyyy");
+            }
+            
         }
+
+        protected void ddl()
+        {
+            deptuser du = new deptuser();
+            du.page(txtname.Text, txtcode.Text);
+            ddlDept.DataSource = du.dt;
+            ddlDept.DataValueField = "Deptname";
+            ddlDept.DataBind();
+            ddlDept.Items.Insert(0, "Select College Name");
+            
+            //Hiden
+            DropDownList1.DataSource = du.dt;
+            DropDownList1.DataValueField = "Deptname";
+            DropDownList1.DataBind();
+            DropDownList1.Items.Insert(0, "Select College Name");
+
+        }
+
 
         protected void btnLogin_Click1(object sender, EventArgs e)
         {
@@ -51,6 +75,8 @@ namespace Online_Student_Complained
             da.Fill(ds);
             GridView1.DataSource = ds.Tables[0];
             GridView1.DataBind();
+            DropDownList1.Visible = true;
+            Label1.Visible = true;
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)
@@ -58,23 +84,22 @@ namespace Online_Student_Complained
             deptuser d2 = new deptuser();
             GridViewRow r1 = ((Button)sender).NamingContainer as GridViewRow;
             TextBox txtcolname = (TextBox)r1.FindControl("txtcolname");
-            TextBox txtDept = (TextBox)r1.FindControl("txtDept");
+            Label lbldept1 = (Label)r1.FindControl("lblDept");
             TextBox txtFname = (TextBox)r1.FindControl("txtFname");
-            TextBox txtpass = (TextBox)r1.FindControl("txtpass");
             TextBox txtId = (TextBox)r1.FindControl("txtId");
-            d2.update_user(txtcolname.Text, txtDept.Text, txtFname.Text, txtId.Text, txtpass.Text);
+            TextBox txtpass = (TextBox)r1.FindControl("txtpass");
+            
+            d2.update_user(txtcolname.Text, lbldept1.Text, txtFname.Text, txtId.Text, txtpass.Text);
+            HttpContext.Current.Response.Redirect("departmentuser.aspx");
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             deptuser d3 = new deptuser();
             GridViewRow r1 = ((Button)sender).NamingContainer as GridViewRow;
-            TextBox txtcolname = (TextBox)r1.FindControl("txtcolname");
-            TextBox txtDept = (TextBox)r1.FindControl("txtDept");
-            TextBox txtFname = (TextBox)r1.FindControl("txtFname");
-            TextBox txtpass = (TextBox)r1.FindControl("txtpass");
             TextBox txtId = (TextBox)r1.FindControl("txtId");
-            d3.delete_user(txtcolname.Text, txtDept.Text, txtFname.Text, txtId.Text, txtpass.Text);
+            d3.delete_user(txtId.Text);
+            HttpContext.Current.Response.Redirect("departmentuser.aspx");
         }
     }
 }

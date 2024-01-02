@@ -16,17 +16,20 @@
             <div class="row clearfix">
                 <div class="">
                     <form id="form2" runat="server">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Email is require" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid Email" ControlToValidate="txtEmail" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"></asp:RegularExpressionValidator>
                         <div class="input_field">
                             <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                            <asp:TextBox ID="txtEmail" runat="server" placeholder="Enter College ID/CODE"></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" placeholder="Enter College ID/CODE" require></asp:TextBox>
                         </div>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Password is require" ControlToValidate="txtPasswrod"></asp:RequiredFieldValidator>
                         <div class="input_field">
                             <span><i aria-hidden="true" class="fa fa-lock"></i></span>
                             <asp:TextBox ID="txtPasswrod" runat="server" placeholder="Enter Password" class="form-control" TextMode="Password"></asp:TextBox>
                         </div>
                         <asp:Button ID="btnLogin" class="button" runat="server" Text="Login" OnClick="btnLogin_Click" />
                         <br />
-                        <asp:Button ID="btnNew" class="button" runat="server" Text="New Account" OnClick="btnNew_Click" />
+                        <asp:Button ID="btnNew" class="button" runat="server" Text="New Account" OnClick="btnNew_Click" CausesValidation="false" />
                     </form>
                 </div>
             </div>

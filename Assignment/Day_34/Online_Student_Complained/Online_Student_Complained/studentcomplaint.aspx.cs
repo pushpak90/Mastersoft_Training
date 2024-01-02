@@ -28,7 +28,7 @@ namespace Online_Student_Complained
         protected void btnShow_Click(object sender, EventArgs e)
         {
             stucomp stu2 = new stucomp();
-            stu2.show_grid();
+            stu2.show_grid((string)Session["s_college"]);
             GridView1.DataSource = stu2._reader;
             GridView1.DataBind();
             stu2._reader.Close();

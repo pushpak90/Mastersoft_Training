@@ -7,8 +7,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Security.Principal;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data.SqlClient;
+using System.Web.UI.WebControls; 
 using System.Configuration;
 
 namespace Online_Student_Complained
@@ -20,7 +19,10 @@ namespace Online_Student_Complained
         public SqlDataReader reader;
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            if(!IsPostBack)
+            {
+                txtDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

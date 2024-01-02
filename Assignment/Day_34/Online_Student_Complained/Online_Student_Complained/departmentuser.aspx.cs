@@ -77,6 +77,7 @@ namespace Online_Student_Complained
             GridView1.DataBind();
             DropDownList1.Visible = true;
             Label1.Visible = true;
+            btnFind.Visible = true;
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)
@@ -100,6 +101,27 @@ namespace Online_Student_Complained
             TextBox txtId = (TextBox)r1.FindControl("txtId");
             d3.delete_user(txtId.Text);
             HttpContext.Current.Response.Redirect("departmentuser.aspx");
+        }
+
+        protected void btnFind_Click(object sender, EventArgs e)
+        {
+            string dept = DropDownList1.SelectedValue;
+
+            string path = ConfigurationManager.AppSettings["collegeDB"];
+            con = new SqlConnection(path);
+            con.Open();
+
+            string query = "Select * From Depuser where Deptname = @Deptname1";
+            com = new SqlCommand(query, con);
+            com.Parameters.AddWithValue("Deptname1", DropDownList1.SelectedValue);
+            rdr = com.ExecuteReader();
+
+            GridView1.DataSource = rdr;
+            GridView1.DataBind();
+
+            rdr.Close();
+
+            Response.Write("Find");
         }
     }
 }

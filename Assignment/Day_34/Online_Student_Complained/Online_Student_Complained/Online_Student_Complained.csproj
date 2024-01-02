@@ -70,6 +70,7 @@
     <Content Include="Collegeadmin.aspx" />
     <Content Include="Collegelogin.aspx" />
     <Content Include="Collegereg.aspx" />
+    <Content Include="compstatus.aspx" />
     <Content Include="default.aspx" />
     <Content Include="Department.aspx" />
     <Content Include="departmentuser.aspx" />
@@ -112,6 +113,13 @@
       <DependentUpon>Collegereg.aspx</DependentUpon>
     </Compile>
     <Compile Include="collreg.cs" />
+    <Compile Include="compstatus.aspx.cs">
+      <DependentUpon>compstatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="compstatus.aspx.designer.cs">
+      <DependentUpon>compstatus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

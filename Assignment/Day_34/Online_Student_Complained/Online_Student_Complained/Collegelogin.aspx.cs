@@ -11,7 +11,10 @@ namespace Online_Student_Complained
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                
+            }
         }
 
         protected void btnNew_Click(object sender, EventArgs e)

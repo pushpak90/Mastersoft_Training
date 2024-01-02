@@ -28,14 +28,31 @@
             <div class="down_nav">
                 <ul>
                     <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/studentcomplaint.aspx" ForeColor="Black"> Complaint Form</asp:LinkButton>
-                    <asp:LinkButton ID="LinkButton2" runat="server" ForeColor="Black"> Complaint Status</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/compstatus.aspx" ForeColor="Black"> Complaint Status</asp:LinkButton>
                 </ul>
                 <b>Welcome : </b>
                 <label class="txtcollegename">
                     <asp:Label ID="lblemail" runat="server" Text="Label"></asp:Label></label>
                 <asp:Button ID="btnLogout" runat="server" class="book_btn" Text="Logout" OnClick="btnLogout_Click" />
             </div>
-
+             <div style="position:absolute; left:1050px; border-style:solid; top:250px; padding:40px">
+                 <marquee direction="up" scrollamount="3">
+                 <asp:Repeater ID="Repeater1" runat="server">
+                      <ItemTemplate>
+                          News:
+                          <asp:Label ID="lblnews" runat="server" Text='<%# Eval("Newstitle") %>'></asp:Label>
+                          <br />
+                          Message :
+                          <asp:Label ID="lblmess" runat="server" Text='<%# Eval("n_Message") %>'></asp:Label>
+                          <br />
+                          Date :
+                          <asp:Label ID="lbldate" runat="server" Text='<%# Eval("n_Date") %>'></asp:Label>
+                          <br />
+                          <hr />
+                      </ItemTemplate>
+                  </asp:Repeater>
+                     </marquee>
+             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

@@ -18,8 +18,12 @@ namespace Online_Student_Complained
         SqlDataReader dr;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ddl();
-            txtDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            if(!IsPostBack)
+            {
+                ddl();
+                txtDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
+            
         }
         protected void ddl()
         {

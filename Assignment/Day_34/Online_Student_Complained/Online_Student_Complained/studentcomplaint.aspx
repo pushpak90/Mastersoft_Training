@@ -48,7 +48,14 @@
                     <br />
                     <asp:Button ID="btnShow" class="button" runat="server" Text="Show" OnClick="btnShow_Click" />
                     <br />
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <center style="position:absolute; top:850px; left:350px">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical">
+                        <AlternatingRowStyle BackColor="White" />
                         <Columns>
                             <asp:TemplateField HeaderText="Sr No.">
                                 <ItemTemplate>
@@ -91,9 +98,15 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
+                        <FooterStyle BackColor="#CCCC99" />
+                        <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                        <RowStyle BackColor="#F7F7DE" />
+                        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                        <SortedAscendingHeaderStyle BackColor="#848384" />
+                        <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                        <SortedDescendingHeaderStyle BackColor="#575357" />
                     </asp:GridView>
-                </div>
-            </div>
-        </div>
-    </div>
+        </center>
 </asp:Content>

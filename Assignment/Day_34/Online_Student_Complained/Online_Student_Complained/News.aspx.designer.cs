@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Online_Student_Complained {
-    
-    
-    public partial class News {
-        
+namespace Online_Student_Complained
+{
+
+
+    public partial class News
+    {
+
         /// <summary>
         /// txtname control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Online_Student_Complained {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtname;
-        
+
         /// <summary>
         /// txtcode control.
         /// </summary>
@@ -29,7 +31,16 @@ namespace Online_Student_Complained {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcode;
-        
+
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+
         /// <summary>
         /// txtTitle control.
         /// </summary>
@@ -38,7 +49,16 @@ namespace Online_Student_Complained {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTitle;
-        
+
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
         /// <summary>
         /// txtMessage control.
         /// </summary>
@@ -47,7 +67,7 @@ namespace Online_Student_Complained {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMessage;
-        
+
         /// <summary>
         /// txtDate control.
         /// </summary>
@@ -56,7 +76,7 @@ namespace Online_Student_Complained {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDate;
-        
+
         /// <summary>
         /// btnLogin control.
         /// </summary>
@@ -65,7 +85,16 @@ namespace Online_Student_Complained {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogin;
-        
+
+        /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+
         /// <summary>
         /// btnNew control.
         /// </summary>
@@ -74,7 +103,7 @@ namespace Online_Student_Complained {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNew;
-        
+
         /// <summary>
         /// GridView1 control.
         /// </summary>

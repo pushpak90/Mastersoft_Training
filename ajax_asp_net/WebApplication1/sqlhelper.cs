@@ -15,6 +15,31 @@ namespace WebApplication1
             _constr = connectionstring;
         }
 
+        public DataSet sql_bind_table(string query)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                
+                SqlConnection con = new SqlConnection(_constr);
+                SqlCommand cmd = new SqlCommand(query, con);
+                if (query.StartsWith("SELECT") | query.StartsWith("select"))
+                    cmd.CommandType = CommandType.Text;
+                else
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                ds = new DataSet();
+                da.Fill(ds);
+            }
+            catch(Exception ex)
+            {
+                string error = ex.Message;
+            }
+            return ds;
+        }
+
         public DataSet dll_drop_down(string query, string para)
         {
             DataSet ds = new DataSet();

@@ -10,6 +10,23 @@
     <script src="jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        table {
+            color: white;
+        }
+
+        /* Optional: Add styles for better visibility, such as background color */
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        /* Optional: Set background color for header cells */
+        th {
+            background-color: #333;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -44,7 +61,16 @@
                 </div>
             </div>
         </div>
+        <table border="1">
+            <!-- Table header row -->
+            <thead id="tbhead">
 
+            </thead>
+            <!-- Table body rows -->
+            <tbody id="tbody">
+                
+            </tbody>
+        </table>
     </form>
     <script src="<%=Page.ResolveClientUrl("~/JavaScript.js")%>"></script>
 </body>

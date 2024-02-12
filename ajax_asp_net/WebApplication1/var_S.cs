@@ -11,6 +11,8 @@ namespace WebApplication1
         public string email { get; set; }
         public string college { get; set; }
         public string branch { get; set; }
+        public string degree { get; set; }
+        public string branch_ddl { get; set; }
 
         public string ddl_deg_no { get; set; }
 

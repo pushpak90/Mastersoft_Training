@@ -1,35 +1,65 @@
 ﻿$(document).ready(function () {
-    $('#btnSubmit').click(function () {
-        
-        var obj = {};
-        obj.name = $('#txtName').val();
-        obj.email = document.getElementById("txtEmail").value;
-        obj.college = $('#txtCollege').val();
-        obj.branch = $('#txtBranch').val();
-        obj.ddl_deg = $('#ddlDeg').val();
-        obj.ddl_branch = $('#ddlbranch').val();
+    var thead = "";
+    thead = thead + '<tr> <th>Name</th><th>Email</th><th>College</th><th>Branch</th><th>Degree</th><th>Branch DDL</th></tr>'
+    $('#tbhead').append(thead);
 
-        console.log(obj);
-       
-        $.ajax({
-            url: "/default.aspx/SaveModule",
-            type: "POST",
-            dataType: 'json',
-            contentType: "application/json;charset=utf-8",
-            data: JSON.stringify(obj),
-            success: function (data) {
-                console.log('Information Saved Seccessfully');
-                alert('Information Saved Seccessfully');
-            },
-            error: function (errResponse) {
-                console.log(errResponse);
-                alert(errResponse)
+    $.ajax({
+        type: "POST",
+        url: "/default.aspx/bindtable",
+        data: {},
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            $('#tbody').empty;
+            console.log(data);
+            var str = "";
+            for (var i = 0; i < data['d'].length; i++) {
+                str = str + '<tr>'
+                str = str + '<td>' + data['d'][i]['Name'] + '</td>'
+                str = str + '<td>' + data['d'][i]['Email'] + '</td>'
+                str = str + '<td>' + data['d'][i]['College'] + '</td>'
+                str = str + '<td>' + data['d'][i]['Branch'] + '</td>'
+                str = str + '<td>' + data['d'][i]['Degree'] + '</td>'
+                str = str + '<td>' + data['d'][i]['Branch_d'] + '</td>'
+                str = str + '</tr>';
             }
-
-        });
-        clear_control();
-    })
+            $('#tbody').append(str);
+        },
+        error: function (xhr, status, error) {
+        }
+    }) 
 })
+
+$('#btnSubmit').click(function () {
+    var obj = {};
+    obj.name = $('#txtName').val();
+    obj.email = document.getElementById("txtEmail").value;
+    obj.college = $('#txtCollege').val();
+    obj.branch = $('#txtBranch').val();
+    obj.ddl_deg = $('#ddlDeg').val();
+    obj.ddl_branch = $('#ddlbranch').val();
+
+    console.log(obj);
+   
+    $.ajax({
+        url: "/default.aspx/SaveModule",
+        type: "POST",
+        dataType: 'json',
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify(obj),
+        success: function (data) {
+            console.log('Information Saved Seccessfully');
+            alert('Information Saved Seccessfully');
+        },
+        error: function (errResponse) {
+            console.log(errResponse);
+            alert(errResponse)
+        }
+
+    });
+    clear_control();
+})
+
 
 function clear_control() {
     $('#txtName').val("");

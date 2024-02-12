@@ -46,6 +46,40 @@ namespace WebApplication1
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static List<var_S> bindtable()
+        {
+            controller cs = new controller();
+            DataSet ds = new DataSet();
+            List<var_S> btable = new List<var_S>();
+
+            try
+            {
+                ds = cs.control_bind_table();
+
+                if (ds.Tables[0] != null && ds.Tables[0].Rows.Count > 0)
+                {
+                    btable = (from DataRow dr in ds.Tables[0].Rows
+                                    select new var_S
+                                    {
+                                        name = dr[0].ToString(),
+                                        email = dr[1].ToString(),
+                                        college = dr[2].ToString(),
+                                        branch = dr[3].ToString(),
+                                        degree = dr[4].ToString(),
+                                        branch_ddl = dr[5].ToString(),
+                                    }).ToList();
+                }
+
+            }
+            catch(Exception ex)
+            {
+                string error = ex.Message;
+            }
+            return btable;
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public static List<var_S> bind_branch(string deg)
         {
             controller col = new controller();

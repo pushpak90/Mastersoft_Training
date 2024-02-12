@@ -58,5 +58,22 @@ namespace WebApplication1
             }
             return 1;
         }
+
+        public DataSet control_bind_table()
+        {
+            sqlhelper sqlhelper = new sqlhelper("Data Source=LAPTOP-5O2IMF80;Initial Catalog=happy;Integrated Security=True;Encrypt=False");
+            DataSet ds = new DataSet();
+
+            try
+            {
+                ds = sqlhelper.sql_bind_table("show_all_data");
+            }
+            catch(Exception ex)
+            {
+                string error = ex.Message;
+            }
+
+            return ds;
+        }
     }
 }

@@ -15,19 +15,20 @@
             var str = "";
             for (var i = 0; i < data['d'].length; i++) {
                 str = str + '<tr>'
-                str = str + '<td>' + data['d'][i]['Name'] + '</td>'
-                str = str + '<td>' + data['d'][i]['Email'] + '</td>'
-                str = str + '<td>' + data['d'][i]['College'] + '</td>'
-                str = str + '<td>' + data['d'][i]['Branch'] + '</td>'
-                str = str + '<td>' + data['d'][i]['Degree'] + '</td>'
-                str = str + '<td>' + data['d'][i]['Branch_d'] + '</td>'
+                str = str + '<td>' + data['d'][i]['name'] + '</td>'
+                str = str + '<td>' + data['d'][i]['email'] + '</td>'
+                str = str + '<td>' + data['d'][i]['college'] + '</td>'
+                str = str + '<td>' + data['d'][i]['branch'] + '</td>'
+                str = str + '<td>' + data['d'][i]['degree'] + '</td>'
+                str = str + '<td>' + data['d'][i]['branch_ddl'] + '</td>'
                 str = str + '</tr>';
             }
             $('#tbody').append(str);
         },
         error: function (xhr, status, error) {
+            console.log(xhr + status + error);
         }
-    }) 
+    })
 })
 
 $('#btnSubmit').click(function () {
@@ -40,7 +41,7 @@ $('#btnSubmit').click(function () {
     obj.ddl_branch = $('#ddlbranch').val();
 
     console.log(obj);
-   
+
     $.ajax({
         url: "/default.aspx/SaveModule",
         type: "POST",

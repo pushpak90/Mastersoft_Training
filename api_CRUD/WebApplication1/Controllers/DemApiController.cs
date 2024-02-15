@@ -22,5 +22,22 @@ namespace WebApplication1.Controllers
             var users = await _apiDemoDbContext.Users.ToListAsync();
             return Ok(users);
         }
+
+        [HttpGet]
+        [Route("get-user-by-id/{UserId}")]
+        public async Task<IActionResult> GetUserByIdAsync(int UserId)
+        {
+            var user = await _apiDemoDbContext.Users.FindAsync(UserId);
+            return Ok(user);
+        }
+
+        [HttpPost]
+        [Route("create-user")]
+        public async Task<IActionResult> PostAsync(Users user)
+        {
+            _apiDemoDbContext.Users.Add(user);
+            await _apiDemoDbContext.SaveChangesAsync();
+            return Created($"/get-user-by-id/{user.UserID}", user);
+        }
     }
 }

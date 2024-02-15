@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
@@ -38,6 +39,15 @@ namespace WebApplication1.Controllers
             _apiDemoDbContext.Users.Add(user);
             await _apiDemoDbContext.SaveChangesAsync();
             return Created($"/get-user-by-id/{user.UserID}", user);
+        }
+
+        [HttpPut]
+        [Route("update-user")]
+        public async Task<IActionResult> PutAsync(Users userToUpdate)
+        {
+            _apiDemoDbContext.Users.Update(userToUpdate);
+            await _apiDemoDbContext.SaveChangesAsync();
+            return NoContent();
         }
     }
 }

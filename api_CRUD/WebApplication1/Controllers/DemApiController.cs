@@ -49,5 +49,19 @@ namespace WebApplication1.Controllers
             await _apiDemoDbContext.SaveChangesAsync();
             return NoContent();
         }
+
+        [HttpDelete]
+        [Route("delete-user/{UserId}")]
+        public async Task<IActionResult> DeleteAsync(int UserId)
+        {
+            var userToDelete = await _apiDemoDbContext.Users.FindAsync(UserId);
+            if(userToDelete == null)
+            {
+                return NotFound();
+            }
+            _apiDemoDbContext.Users.Remove(userToDelete);
+            await _apiDemoDbContext.SaveChangesAsync();
+            return NoContent();
+        }
     }
 }

@@ -6,6 +6,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
+    
     [Route("api/demo")]
     [ApiController]
     public class DemApiController : ControllerBase
@@ -16,6 +17,7 @@ namespace WebApplication1.Controllers
             _apiDemoDbContext = apiDemoDbContext;
         }
 
+        //http://localhost:5025/api/demo/get-users-list
         [HttpGet]
         [Route("get-users-list")]
         public async Task<IActionResult> GetAsync()
@@ -24,6 +26,7 @@ namespace WebApplication1.Controllers
             return Ok(users);
         }
 
+        //http://localhost:5025/api/demo/get-user-by-id/2
         [HttpGet]
         [Route("get-user-by-id/{UserId}")]
         public async Task<IActionResult> GetUserByIdAsync(int UserId)
@@ -32,6 +35,7 @@ namespace WebApplication1.Controllers
             return Ok(user);
         }
 
+        //http://localhost:5025/api/demo/create-user
         [HttpPost]
         [Route("create-user")]
         public async Task<IActionResult> PostAsync(Users user)
@@ -41,6 +45,7 @@ namespace WebApplication1.Controllers
             return Created($"/get-user-by-id/{user.UserID}", user);
         }
 
+        //http://localhost:5025/api/demo/update-user
         [HttpPut]
         [Route("update-user")]
         public async Task<IActionResult> PutAsync(Users userToUpdate)
@@ -50,6 +55,7 @@ namespace WebApplication1.Controllers
             return NoContent();
         }
 
+        //http://localhost:5025/api/demo/delete-user/2
         [HttpDelete]
         [Route("delete-user/{UserId}")]
         public async Task<IActionResult> DeleteAsync(int UserId)

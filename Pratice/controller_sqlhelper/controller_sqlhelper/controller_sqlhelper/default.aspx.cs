@@ -13,14 +13,14 @@ namespace controller_sqlhelper
 {
     public partial class _default : System.Web.UI.Page
     {
-        
+        Common obcom = new Common();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 bind_DEG();
             }
-            
+            obcom.getddldate(ddlBranch, "BRANCH", "B_ID", "BRANCH_NAME", "", "");
         }
         protected void bind_DEG()
         {

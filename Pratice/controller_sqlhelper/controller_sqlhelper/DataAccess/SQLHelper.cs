@@ -73,5 +73,38 @@ namespace DataAccess
             }
             return ds;
         }
+
+        public DataSet ExecuteDataSetDep(string query, SqlParameter[] para)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                SqlConnection con = new SqlConnection(_connection);
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                if (query.StartsWith("SELECT") || query.StartsWith("select"))
+                {
+                    cmd.CommandType = CommandType.Text;
+                }
+                else
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                }
+
+                for (int i = 0; i < para.Length; i++)
+                {
+                    cmd.Parameters.Add(para[i]);
+                }
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                string error_msg = ex.Message;
+            }
+            return ds;
+        }
+
     }
 }

@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 using System.Data;
 using DataAccess;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace BusinessObject
 {
     public class Common
     {
-        public void fill_drop()
+        public DataSet fill_drop()
         {
             DataSet ds = new DataSet();
-            ds = null;
-
             try
             {
-                SQLHelper sql = new SQLHelper();
-                ds = sql.Bind_Drop_down("bind_drop");
+                SQLHelper sql = new SQLHelper("Data Source=LAPTOP-5O2IMF80;Initial Catalog=SQLHELPER;Integrated Security=True;Encrypt=False");
+                ds = sql.ExecuteDataSet("SELECT * FROM DEG", ds);
             }
             catch(Exception ex)
             {
                 string error_msg = ex.Message;
             }
+            return ds;
         }
 
         public void getddldate(DropDownList ddlList, string query)

@@ -11,16 +11,21 @@ namespace DataAccess
 {
     public class SQLHelper
     {
-        public DataSet Bind_Drop_down(String query)
+        private string _connection = string.Empty;
+        public SQLHelper(string connectionstring)
         {
-            DataSet ds = new DataSet();
-            ds = null;
+            _connection = connectionstring;
+        }
+
+        public int ExecuteNonQuerySP(string query, SqlParameter[] para)
+        {
+            int result = 0;
             try
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.AppSettings["sqldb"]);
-                SqlCommand cmd = new SqlCommand("bind_drop", con);
+                SqlConnection con = new SqlConnection(_connection);
+                SqlCommand cmd = new SqlCommand(query, con);
 
-                if(query.StartsWith("SELECT") | query.StartsWith("select"))
+                if (query.StartsWith("INSERT") || query.StartsWith("insert"))
                 {
                     cmd.CommandType = CommandType.Text;
                 }
@@ -29,12 +34,40 @@ namespace DataAccess
                     cmd.CommandType = CommandType.StoredProcedure;
                 }
 
+                for (int i = 0; i < para.Length; i++)
+                {
+                    cmd.Parameters.Add(para[i]);
+                }
                 con.Open();
+                result = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                string error_msg = ex.Message;
+            }
+            return result;
+        }
+
+        public DataSet ExecuteDataSet(string query,DataSet ds) 
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(_connection);
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                if(query.StartsWith("SELECT") || query.StartsWith("select"))
+                {
+                    cmd.CommandType = CommandType.Text;
+                }
+                else
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                }
+
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(ds);
-                
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 string error_msg = ex.Message;
             }

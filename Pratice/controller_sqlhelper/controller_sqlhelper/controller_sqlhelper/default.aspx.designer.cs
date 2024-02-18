@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace controller_sqlhelper {
-    
-    
-    public partial class _default {
-        
+namespace controller_sqlhelper
+{
+
+
+    public partial class _default
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace controller_sqlhelper {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// txtFirstName control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace controller_sqlhelper {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFirstName;
-        
+
         /// <summary>
         /// txtLastName control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace controller_sqlhelper {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLastName;
-        
+
         /// <summary>
         /// txtCollege control.
         /// </summary>
@@ -47,7 +49,16 @@ namespace controller_sqlhelper {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCollege;
-        
+
+        /// <summary>
+        /// ddlDegree control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDegree;
+
         /// <summary>
         /// ddlBranch control.
         /// </summary>
@@ -56,7 +67,7 @@ namespace controller_sqlhelper {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlBranch;
-        
+
         /// <summary>
         /// txtMobileNo control.
         /// </summary>
@@ -65,14 +76,5 @@ namespace controller_sqlhelper {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMobileNo;
-        
-        /// <summary>
-        /// btnSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

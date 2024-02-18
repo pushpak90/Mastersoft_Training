@@ -5,6 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <%--<script src="jquery-3.7.1.min.js"></script>--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,7 +21,10 @@
             College :
             <asp:TextBox ID="txtCollege" runat="server"></asp:TextBox>
             <br />
-            Select Branch :
+            Select Degree:
+            <asp:DropDownList ID="ddlDegree" runat="server">
+            </asp:DropDownList>
+            Select Branch:
             <asp:DropDownList ID="ddlBranch" runat="server">
             </asp:DropDownList>
             <br />
@@ -27,9 +32,10 @@
             <asp:TextBox ID="txtMobileNo" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
+            <button type="button" id="btnSubmit">Click Me!</button>
 
         </div>
     </form>
+    <script src="<%=Page.ResolveClientUrl("~/JavaScript.js")%>"></script>
 </body>
 </html>

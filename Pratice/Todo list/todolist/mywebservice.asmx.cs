@@ -13,9 +13,20 @@ namespace todolist
     {
 
         [WebMethod]
-        public string SaveUserDetails(string name, string email)
+        public string ProcessData(string name, string email)
         {
-            return name + email;
+            try
+            {
+                // Your processing logic here
+
+                return $"Received data: Name - {name}, Email - {email}";
+            }
+            catch (Exception ex)
+            {
+                // Log the exception for further analysis
+                Console.WriteLine(ex.Message);
+                throw; // Re-throw the exception to get more details in the browser console
+            }
         }
 
     }

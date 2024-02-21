@@ -17,7 +17,7 @@
             <label for="email">Email:</label>
             <input type="text" id="txtEmail" />
 
-           <input type="button" id="savedata" value="Submit" />
+           <input type="button" id="btnsavedata" value="Submit" />
 
             <script src="<%=Page.ResolveClientUrl("~/JavaScript.js")%>"></script> 
 

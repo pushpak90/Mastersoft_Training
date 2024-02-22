@@ -1,0 +1,300 @@
+jquery
+
+
+$(document).ready(function () {
+    $('#btnTodoAdd').click(function () {
+        if ($('#txtTodo').val() == '') {
+            alert('You must write something!');
+        }
+        else {
+            ///WEB_API/Add_BookMark_Link.asmx/GetVideo
+            var txtTodevalue = $('#txtTodo').val();
+        
+        
+            console.log(txtTodevalue);
+            $.ajax({
+                url: "/PresentationLayer/WEB_API/Add_BookMark_Link.asmx/Add_TodoList",
+                data: {TodoValue: txtTodevalue},    
+                type: "POST",
+                dataType: 'text',
+                success: function (data) {
+                    $('#ctl00_Label2').empty();
+                    loadtodolist();
+                    consol.log("data inserted")
+                },
+                error: function (e) {
+                    alert('Try Again..!!');
+                }
+                
+            })
+        }
+        $('#txtTodo').val("");
+    })
+    function loadtodolist() {
+        $.ajax({
+            url: layer + "/WEB_API/Add_BookMark_Link.asmx/GetTodoList",
+            data: {},
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $('#ctl00_Label3').empty();
+                $('#ctl00_Label4').empty();
+
+                $.each(data.d, function (index, GetVal) {
+                    var checkbox = $('<input type="checkbox" name="checkboxName" value="' + GetVal.data + '">');
+                    var inputButton = $('<button type="button" class="btn"><i class="bi bi-trash"></i></button>');
+                    var label = $('<label id="lblTodo_' + index + '">' + GetVal.data + '</label>');
+
+                    if (GetVal.res == 0) {
+                        checkbox.prop('checked', true);
+                        label.addClass('todohide');
+                        appendToWrapper(checkbox, label, inputButton, '#ctl00_Label4');
+                    } else {
+                        appendToWrapper(checkbox, label, inputButton, '#ctl00_Label3');
+                    }
+
+                    checkbox.click(function () {
+                        handleCheckboxChange(this, label, inputButton, GetVal.data, GetVal.res);
+                    });
+
+                    inputButton.on('click', function () {
+                        handleInputButtonClick(checkbox, label, inputButton, GetVal.data);
+                    });
+                });
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
+    }
+
+    function appendToWrapper(checkbox, label, inputButton, wrapperId) {
+        var wrapper = $(wrapperId); // Use the existing wrapper if available
+
+        // If the wrapper doesn't exist, create a new one
+        if (wrapper.length === 0) {
+            wrapper = $('<div class="mb-3 p-3 rounded"></div>');  // Create a wrapper div with padding and rounded corners
+            $(wrapperId).append(wrapper);
+        }
+
+        var row = $('<div class="d-flex align-items-center shadow p-1 mb-3 bg-body rounded"></div>');  // Add shadow using Bootstrap utility classes
+
+        // Create columns for each item with appropriate spacing
+        var checkboxCol = $('<div class="flex-shrink-0"></div>').append(checkbox);
+        var labelCol = $('<div class="flex-grow-1 ms-3"></div>').append(label); // Add more left margin to the label
+        var buttonCol = $('<div class="flex-shrink-0"></div>').append(inputButton);
+
+        // Append columns to the row
+        row.append(checkboxCol).append(labelCol).append(buttonCol);
+
+        // Append the row to the wrapper
+        wrapper.append(row);
+    }
+
+    function handleCheckboxChange(checkbox, label, inputButton, data, res) {
+        var wrapperId = checkbox.checked ? '#ctl00_Label4' : '#ctl00_Label3';
+
+        // Get the wrapper
+        var wrapper = $(wrapperId);
+
+        // Get the parent row of the checkbox
+        var row = $(checkbox).closest('.d-flex');
+
+        // Update the label's class
+        if (checkbox.checked) {
+            label.addClass('todohide');
+            status(0, data, 1);
+        } else {
+            label.removeClass('todohide');
+            status(1, data, 1);
+        }
+
+        // Move the entire row to the appropriate wrapper
+        wrapper.append(row);
+    }
+
+    function handleInputButtonClick(checkbox, label, inputButton, data) {
+        //status(0, data, 0);
+        // Hide the corresponding checkbox and label
+        //checkbox.hide();
+        //label.hide();
+        //inputButton.hide();
+
+        var row = $(checkbox).closest('.d-flex');
+        status(0, data, 0);
+    
+        // Hide the entire row including checkbox, label, and button
+        row.remove();
+
+
+    }
+
+    // Initial load
+    loadtodolist();
+
+    function status(s_num, todo_msg, c_num) {
+        console.log(s_num);
+        console.log(todo_msg);
+        $.ajax({
+            url: "/PresentationLayer/WEB_API/Add_BookMark_Link.asmx/Change_Status",
+            data: { TodoValue: s_num, TodoMsg: todo_msg, CancelValue: c_num },
+            type: "POST",
+            dataType: 'text',
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (e) {
+                alert('Try Again..!!');
+            }
+        });
+    }
+
+    loadtodolist();
+})
+
+
+/*Todo Class CSS*/
+.todohide {
+    text-decoration: line-through; 
+    color: #888;
+}
+
+/*Web services*/
+
+
+[WebMethod(EnableSession = true)]
+    [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+    public string Add_TodoList(string TodoValue)
+    {
+       
+        string retStatus = "";
+        int UA_NO = Convert.ToInt32(Session["userno"]);
+        
+        string SP_Name = "SP_INS_TODOLIST";
+        string SP_Parameters = "@P_TODO_MSG, @P_STATUS ,  @P_CANCEL ,  @P_UA_NO";
+        string Call_Values = "" + TodoValue + "," + 1 + "," + 1 + "," + UA_NO;
+        
+        retStatus = objCommon.DynamicSPCall_IUD(SP_Name, SP_Parameters, Call_Values, false,0);
+        
+        var pkg = new Packet
+        {
+            res = "1",
+            msg = "Success",
+            data = retStatus
+        };
+
+        return JsonConvert.SerializeObject(pkg, Newtonsoft.Json.Formatting.Indented);
+    }
+
+    //fetch todo
+    [WebMethod(EnableSession = true)]
+    [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+    public List<Packet> GetTodoList()
+    {
+        List<Packet> li = new List<Packet>();
+        Common objCommon = new Common();
+
+        int UA_NO = Convert.ToInt32(Session["userno"]);
+        string SP_Name = "GET_USER_TODO_LIST";
+        string SP_Parameters = "@P_UA_NO";
+        string Call_Values = "" + UA_NO + "";
+
+        DataSet ds = objCommon.DynamicSPCall_Select(SP_Name, SP_Parameters, Call_Values);
+
+        if (ds.Tables[0] != null && ds.Tables[0].Rows.Count > 0)
+        {
+            li = (from DataRow dr in ds.Tables[0].Rows
+                            select new Packet
+                            {
+                                data = dr[0].ToString(),
+                                res = dr[1].ToString(),
+                            }).ToList();
+        }
+
+        return li;
+    }
+
+    //Change Status
+    [WebMethod(EnableSession = true)]
+    [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+    public string Change_Status(string TodoValue, string TodoMsg, string CancelValue)
+    {
+        string retStatus = "";
+        int UA_NO = Convert.ToInt32(Session["userno"]);
+
+        string SP_Name = "PR_UPDATE_STATUS_TODO_LIST";
+        string SP_Parameters = "@P_TODO_MSG,@P_STATUS,@P_CANCEL,@P_UA_NO";
+        string Call_Values = "" + TodoMsg + "," + TodoValue + "," + CancelValue + "," + UA_NO;
+        
+
+        retStatus = objCommon.DynamicSPCall_IUD(SP_Name, SP_Parameters, Call_Values, false, 0);
+
+        var pkg = new Packet
+        {
+            res = "1",
+            msg = "Success",
+            data = retStatus
+        };
+
+        return JsonConvert.SerializeObject(pkg, Newtonsoft.Json.Formatting.Indented);
+    }
+	
+	
+/*HTML*/
+
+
+        <!-- Todo Model Added By Pushpak Fasate -->
+        <div class="modal right fade" id="myModelTodo">
+            <div class="modal-dialog">
+                <div class="modal-content rounded-0">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title">Todo List</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="newItem">
+                                        <div class="newItem__input d-flex">
+                                            <input type="text" class="form-control" id="txtTodo" placeholder="Add Todo" />
+                                            <input type="button" class="btn btn-sm btn-outline-primary" id="btnTodoAdd" value="Add" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="newItem">
+                            <div class="newItem__input">
+
+                                <div class="container mt-3 ml-4">
+                                    Not Completed<br>
+                                    <asp:Label ID="Label3" runat="server"></asp:Label>
+                                </div>
+                                <div class="container mt-3 ml-4">
+                                    Completed<br>
+                                    <asp:Label ID="Label4" runat="server"></asp:Label>
+                                </div>
+
+                                <%-- <asp:Label ID="Label2"  runat="server"></asp:Label>--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		
+		
+		/*HTML*/
+		
+		
+		<!-- Todo List Added By Pushpak Fasate-->
+                        <li class="dropdown mt-sm-1" data-bs-toggle="modal" data-bs-target="#myModelTodo">
+                            <i class="bi bi-grid-3x3-gap-fill noimgtop me-2" title="Todo"></i>
+                        </li>

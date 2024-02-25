@@ -1,23 +1,24 @@
 ﻿$('#btnSave').click(function () {
     console.log("Working");
-    //console.log($('#fname').val());
+    console.log($('#fname').val());
     var obj = {};
     obj.name = $('#fname').val();
 
     $.ajax({
-        url: baseUrl + "default.aspx/SaveTodo",
+        url: "/todolist.aspx/SaveTodo",
         type: "POST",
         dataType: 'json',
         contentType: "application/json;charset=utf-8",
         data: JSON.stringify(obj),
         success: function (data) {
-            console.log(data.name);
-            for (var i = 0; i < data.length; i++) {
-                console.log(data.name);
-            }
+            console.log('Information Saved Seccessfully');
+            alert('Information Saved Seccessfully');
+            alert(data);
         },
         error: function (errResponse) {
-            console.log('Error');
+            console.log(errResponse);
+            alert(errResponse)
         }
+
     });
-});
+})

@@ -9,12 +9,15 @@
         var baseUrl = '<%= ResolveClientUrl("~/") %>';
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <input type="text" id="fname" name="fname" />
+            <input type="text" id="tname" name="fname" />
             <input type="button" id="btnSave" value="Save" />
+            <br/>Todo list<br />
+            <label id="todomsg"></label>
         </div>
     </form>
 

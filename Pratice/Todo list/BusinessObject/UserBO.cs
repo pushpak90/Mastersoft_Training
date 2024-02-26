@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BusinessObject
 {
-    public class Class1
+    public class UserBO
     {
+        public string todolist { get; set; }
+
+        public string todo_msg { get; set; }
+        public int status { get; set; }
     }
 }

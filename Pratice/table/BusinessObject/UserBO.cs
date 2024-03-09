@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BusinessObject
 {
-    public class Class1
+    public class UserBO
     {
+        public string firstName {  get; set; }
+        public string lastName { get; set; }
     }
 }

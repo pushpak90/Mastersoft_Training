@@ -2,6 +2,7 @@
 using DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,22 @@ namespace BusinessLogic
             }
 
             return msg;
+        }
+
+        public DataSet controllerBindTable()
+        {
+            string msg = string.Empty;
+            DataSet ds = new DataSet();
+            UserDA da = new UserDA("Data Source=LAPTOP-5O2IMF80;Initial Catalog=SQLHELPER;Integrated Security=True;Encrypt=False");
+            try
+            {
+                ds = da.ExecuteDataSet("SELECT * FROM BASICINFO");
+            }
+            catch(Exception ex)
+            {
+                msg = ex.Message;
+            }
+            return ds;
         }
 
     }

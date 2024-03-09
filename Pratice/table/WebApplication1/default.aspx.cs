@@ -2,6 +2,7 @@
 using BusinessObject;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Script.Services;
@@ -37,6 +38,37 @@ namespace WebApplication1
                 msg = ex.Message;
             }
             return msg;
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static List<UserBO> bindTable()
+        {
+            string msg = string.Empty;
+            List<UserBO> li = new List<UserBO>();
+            UserBL bl = new UserBL();
+            try
+            {
+                DataSet ds = new DataSet();
+                ds = bl.controllerBindTable();
+
+                if (ds.Tables[0] != null && ds.Tables[0].Rows.Count > 0)
+                {
+                    li = (from DataRow dr in ds.Tables[0].Rows
+                          select new UserBO
+                          {
+                              firstName = dr[0].ToString(),
+                              lastName = dr[1].ToString(),
+                          }).ToList();
+                }
+
+                msg = "Table";
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+            return li;
         }
     }
 }

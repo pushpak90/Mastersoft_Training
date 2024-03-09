@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography;
@@ -43,6 +44,28 @@ namespace DataAccess
                 msg = ex.Message;
             }
             return msg;
+        }
+
+        public DataSet ExecuteDataSet(string query)
+        {
+            DataSet ds = new DataSet();
+            string msg = string.Empty;
+            try
+            {
+                SqlConnection con = new SqlConnection(_conn);
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(ds);
+
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+
+            return ds;
         }
 
     }

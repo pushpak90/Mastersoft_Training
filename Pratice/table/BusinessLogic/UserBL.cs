@@ -57,7 +57,7 @@ namespace BusinessLogic
             UserDA da = new UserDA(_connectionString);
             try
             {
-                msg = da.saveDataTable("" ,ds);
+                msg = da.saveDataTable("storeDataTable", ds);
             }
             catch(Exception ex)
             {

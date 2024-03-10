@@ -59,6 +59,8 @@ namespace WebApplication1
                           {
                               firstName = dr[0].ToString(),
                               lastName = dr[1].ToString(),
+                              city = dr[2].ToString(),
+                              mobile = dr[3].ToString(),
                           }).ToList();
                 }
 
@@ -73,7 +75,7 @@ namespace WebApplication1
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public static void SaveTableData(List<TableData> data)
+        public static string SaveTableData(List<TableData> data)
         {
             // Your logic to process and store the data
             // Convert the List<TableData> to a DataTable or DataSet if needed
@@ -91,6 +93,7 @@ namespace WebApplication1
 
             msg = bl.saveDataTable(ds);
 
+            return msg;
             // Perform your database or other saving logic here
         }
 
@@ -98,12 +101,14 @@ namespace WebApplication1
         private static DataTable ConvertListToDataTable(List<TableData> data)
         {
             DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Name", typeof(string));
+            dataTable.Columns.Add("lastName", typeof(string));
             dataTable.Columns.Add("City", typeof(string));
             dataTable.Columns.Add("Mobile", typeof(string));
 
             foreach (var item in data)
             {
-                dataTable.Rows.Add(item.City, item.Mobile);
+                dataTable.Rows.Add(item.Name,item.lastName ,item.City, item.Mobile);
             }
 
             return dataTable;
@@ -111,6 +116,8 @@ namespace WebApplication1
     }
     public class TableData
     {
+        public string Name { get; set; }
+        public string lastName { get; set; }
         public string City { get; set; }
         public string Mobile { get; set; }
     }

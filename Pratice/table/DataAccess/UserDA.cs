@@ -75,7 +75,7 @@ namespace DataAccess
                 SqlConnection con = new SqlConnection(_conn);
                 SqlCommand cmd = new SqlCommand(query, con);
 
-                if(query.StartsWith("insert") || query.StartsWith("INSERT"))
+                if(query.StartsWith("insert") || query.StartsWith("INSERT") || query.StartsWith("UPDATE") || query.StartsWith("update"))
                 {
                     cmd.CommandType = CommandType.Text;
                 }
@@ -83,9 +83,18 @@ namespace DataAccess
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                 }
-
                 con.Open();
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@P_FIRSTNAME", row["name"]);
+                    cmd.Parameters.AddWithValue("@P_LASTNAME", row["lastname"]);
+                    cmd.Parameters.AddWithValue("@P_CITY", row["city"]);
+                    cmd.Parameters.AddWithValue("@P_MOBILE", row["mobile"]);
 
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
             }
             catch(Exception ex)
             {

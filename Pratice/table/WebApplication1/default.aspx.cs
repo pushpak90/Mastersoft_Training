@@ -1,5 +1,6 @@
 ﻿using BusinessLogic;
 using BusinessObject;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -84,15 +85,21 @@ namespace WebApplication1
             DataTable dataTable = ConvertListToDataTable(data);
             UserBL bl = new UserBL();
             // Now, 'dataTable' contains your data in tabular form
-
-            if (ds == null)
+            try
             {
-                ds = new DataSet();
+                if (ds == null)
+                {
+                    ds = new DataSet();
+                }
+                ds.Tables.Add(dataTable);
+
+                msg = bl.saveDataTable(ds);
             }
-            ds.Tables.Add(dataTable);
-
-            msg = bl.saveDataTable(ds);
-
+            catch(Exception ex)
+            {
+                msg = ex.Message;
+            }
+            
             return msg;
             // Perform your database or other saving logic here
         }
@@ -113,6 +120,37 @@ namespace WebApplication1
 
             return dataTable;
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static string deleteRow(string data)
+        {
+            string msg = string.Empty;
+
+            try
+            {
+                // Deserialize JSON data to retrieve individual values
+                var jsonData = JsonConvert.DeserializeObject<Dictionary<string, string>>(data);
+
+                string name = jsonData["name"];
+                string lastName = jsonData["lastName"];
+                string city = jsonData["city"];
+                string mobile = jsonData["mobile"];
+
+                // Now you can use these variables in your logic
+
+                // Example: Perform the delete operation using the received data
+
+                msg = "Delete operation successful";
+            }
+            catch (Exception ex)
+            {
+                msg = "Error: " + ex.Message;
+            }
+
+            return msg;
+        }
+
     }
     public class TableData
     {

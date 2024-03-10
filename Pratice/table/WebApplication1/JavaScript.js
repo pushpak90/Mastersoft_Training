@@ -42,6 +42,7 @@ function createTable() {
             str = str + '<th>' + 'Last Name' + '</th>';
             str = str + '<th>' + 'City' + '</th>';
             str = str + '<th>' + 'Mobile' + '</th>';
+            str = str + '<th>' + 'Action' + '</th>';
             str = str + '</tr>' + '</thead>';
             str = str + '<tbody>';
 
@@ -52,7 +53,6 @@ function createTable() {
                     str = str + '<td class="lastName">' + data['d'][i]['lastName'] + '</td>'
                     str = str + '<td>' + '<input type="text" placeholder="Enter City" value="' + data['d'][i]['city'] + '"/></td>'
                     str = str + '<td>' + '<input type="text" placeholder="Enter Mobile" value="' + data['d'][i]['mobile'] + '"/>' + '</td>'
-                    str = str + '</tr>'
                 }
                 else
                 {
@@ -61,9 +61,9 @@ function createTable() {
                     str = str + '<td class="lastName">' + data['d'][i]['lastName'] + '</td>'
                     str = str + '<td>' + '<input type="text" placeholder="Enter City" value="' + data['d'][i]['city'] + ' " readonly/></td>'
                     str = str + '<td>' + '<input type="text" placeholder="Enter Mobile" value="' + data['d'][i]['mobile'] + '"readonly/>' + '</td>'
-                    str = str + '</tr>'
                 }
-                
+                str = str + '<td>' +'<input type="button" class="btnDelete" value="Delete">'+'</td>';
+                str = str + '</tr>'
             }
             str = str + '</tbody>' + '</table>';
 
@@ -76,7 +76,47 @@ function createTable() {
         complete: function () {
             // After creating the table, attach the event handler for the submit button
             attachSubmitHandler();
+            attachDeleteHandler();
         }
+    });
+}
+
+function attachDeleteHandler() {
+    $('#table').on('click', '.btnDelete', function () {
+        console.log('Delete button clicked');
+
+        // Find the closest parent <tr> and then find the desired elements within that row
+        var row = $(this).closest('tr');
+        var name = row.find('.firstName').text();
+        var lastName = row.find('.lastName').text();
+        var city = row.find('input[placeholder="Enter City"]').val();
+        var mobile = row.find('input[placeholder="Enter Mobile"]').val();
+
+        console.log(name + ' ' + lastName + ' ' + city + ' ' + mobile);
+
+        var dataArray = {
+            name: name,
+            lastName: lastName,
+            city: city,
+            mobile: mobile
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "default.aspx/deleteRow",
+            data: JSON.stringify({ data: dataArray }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                // Handle success if needed
+                console.log(data);
+            },
+            error: function (errResponse) {
+                // Handle error if needed
+                console.log(errResponse);
+            }
+        });
+
     });
 }
 

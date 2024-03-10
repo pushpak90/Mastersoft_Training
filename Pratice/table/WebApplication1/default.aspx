@@ -23,6 +23,7 @@
             
             <!-- Submit Button -->
             <input type="button" id="btnSubmit" value="Submit" />
+            <input type="button" id="btnSubmitTable" value="Submit Table" />
         </div>
         <div>
             <div id="table">

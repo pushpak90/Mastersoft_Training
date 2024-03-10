@@ -70,5 +70,48 @@ namespace WebApplication1
             }
             return li;
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static void SaveTableData(List<TableData> data)
+        {
+            // Your logic to process and store the data
+            // Convert the List<TableData> to a DataTable or DataSet if needed
+            string msg = string.Empty;
+            DataSet ds = new DataSet();
+            DataTable dataTable = ConvertListToDataTable(data);
+            UserBL bl = new UserBL();
+            // Now, 'dataTable' contains your data in tabular form
+
+            if (ds == null)
+            {
+                ds = new DataSet();
+            }
+            ds.Tables.Add(dataTable);
+
+            msg = bl.saveDataTable(ds);
+
+            // Perform your database or other saving logic here
+        }
+
+        // Helper method to convert List to DataTable
+        private static DataTable ConvertListToDataTable(List<TableData> data)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("City", typeof(string));
+            dataTable.Columns.Add("Mobile", typeof(string));
+
+            foreach (var item in data)
+            {
+                dataTable.Rows.Add(item.City, item.Mobile);
+            }
+
+            return dataTable;
+        }
+    }
+    public class TableData
+    {
+        public string City { get; set; }
+        public string Mobile { get; set; }
     }
 }

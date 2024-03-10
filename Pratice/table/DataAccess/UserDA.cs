@@ -67,6 +67,31 @@ namespace DataAccess
 
             return ds;
         }
+        public string saveDataTable(string query ,DataSet ds)
+        {
+            string msg = string.Empty;
+            try
+            {
+                SqlConnection con = new SqlConnection(_conn);
+                SqlCommand cmd = new SqlCommand(query, con);
 
+                if(query.StartsWith("insert") || query.StartsWith("INSERT"))
+                {
+                    cmd.CommandType = CommandType.Text;
+                }
+                else
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                }
+
+                con.Open();
+
+            }
+            catch(Exception ex)
+            {
+                msg = ex.Message;
+            }
+            return msg;
+        }
     }
 }

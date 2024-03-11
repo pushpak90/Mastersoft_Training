@@ -66,5 +66,19 @@ namespace BusinessLogic
 
             return msg;
         }
+        public string deleteRecord(DataSet ds)
+        {
+            UserDA da = new UserDA(_connectionString);
+            string msg = string.Empty;
+            try
+            {
+                msg = da.saveDataTable("deleteRecord", ds);
+            }
+            catch(Exception ex)
+            {
+                msg = ex.Message;
+            }
+            return msg;
+        }
     }
 }

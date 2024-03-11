@@ -95,28 +95,33 @@ function attachDeleteHandler() {
         console.log(name + ' ' + lastName + ' ' + city + ' ' + mobile);
 
         var dataArray = {
-            name: name,
-            lastName: lastName,
-            city: city,
-            mobile: mobile
+            data: [
+                {
+                    name: name,
+                    lastName: lastName,
+                    city: city,
+                    mobile: mobile
+                }
+            ]
         };
 
         $.ajax({
             type: "POST",
-            url: "default.aspx/deleteRow",
-            data: JSON.stringify({ data: dataArray }),
+            url: "default.aspx/deleteRow", // Replace YourPage with the actual name of your ASPX page
+            data: JSON.stringify(dataArray),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (data) {
                 // Handle success if needed
                 console.log(data);
+                $('#table').empty();
+                createTable();
             },
             error: function (errResponse) {
                 // Handle error if needed
                 console.log(errResponse);
             }
         });
-
     });
 }
 
@@ -147,6 +152,8 @@ function attachSubmitHandler() {
             success: function (data) {
                 // Handle success if needed
                 console.log(data);
+                $('#table').empty();
+                createTable();
             },
             error: function (errResponse) {
                 // Handle error if needed

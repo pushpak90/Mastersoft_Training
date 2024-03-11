@@ -123,29 +123,36 @@ namespace WebApplication1
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public static string deleteRow(string data)
+        public static string deleteRow(List<TableData> data)
         {
+            DataSet ds = new DataSet();
             string msg = string.Empty;
-
+            UserBL bl = new UserBL();
             try
             {
-                // Deserialize JSON data to retrieve individual values
-                var jsonData = JsonConvert.DeserializeObject<Dictionary<string, string>>(data);
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("Name", typeof(string));
+                dataTable.Columns.Add("lastName", typeof(string));
+                dataTable.Columns.Add("City", typeof(string));
+                dataTable.Columns.Add("Mobile", typeof(string));
+                
+                foreach (var item in data)
+                {
+                    dataTable.Rows.Add(item.Name, item.lastName, item.City, item.Mobile);
+                }
 
-                string name = jsonData["name"];
-                string lastName = jsonData["lastName"];
-                string city = jsonData["city"];
-                string mobile = jsonData["mobile"];
+                if (ds == null)
+                {
+                    ds = new DataSet();
+                }
+                ds.Tables.Add(dataTable);
 
-                // Now you can use these variables in your logic
+                msg = bl.deleteRecord(ds);
 
-                // Example: Perform the delete operation using the received data
-
-                msg = "Delete operation successful";
             }
             catch (Exception ex)
             {
-                msg = "Error: " + ex.Message;
+                msg = ex.Message;
             }
 
             return msg;

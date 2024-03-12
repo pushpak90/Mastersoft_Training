@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
     console.log("JS file is ready");
     createTable();
+    console.log("table create");
 })
 
 $('#btnSubmit').click(function () {
@@ -75,8 +76,10 @@ function createTable() {
         },
         complete: function () {
             // After creating the table, attach the event handler for the submit button
+            
             attachSubmitHandler();
             attachDeleteHandler();
+           
         }
     });
 }

@@ -1,7 +1,8 @@
 ﻿$(document).ready(function () {
-    console.log("JS file is ready");
-    createTable();
-    console.log("table create");
+    console.log("page load");
+    //console.log("JS file is ready");
+    //createTable();
+    //console.log("table create");
 })
 
 $('#btnSubmit').click(function () {

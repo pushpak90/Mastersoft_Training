@@ -30,7 +30,7 @@
 
             </div>
         </div>
-        <asp:Button ID="btnDownloadPDF" runat="server" Text="Download PDF" OnClick="btnDownloadPDF_Click" />
+        <%--<asp:Button ID="btnDownloadPDF" runat="server" Text="Download PDF" OnClick="btnDownloadPDF_Click" />--%>
     </form>
     <script src="<%=Page.ResolveClientUrl("~/JavaScript.js")%>"></script> 
 </body>

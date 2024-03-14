@@ -10,11 +10,6 @@ using System.Web.Script.Services;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System;
-using System.IO;
-using System.Web;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 
 namespace WebApplication1
 {
@@ -162,29 +157,29 @@ namespace WebApplication1
 
             return msg;
         }
-        protected void btnDownloadPDF_Click(object sender, EventArgs e)
-        {
-            // Create a new PDF document
-            XDocument doc = new Document();
-            // Set file name
-            string fileName = Server.MapPath("~/YourFolder/YourPDFFileName.pdf");
-            // Create a new PDF file
-            PdfWriter.GetInstance(doc, new FileStream(fileName, FileMode.Create));
+        // protected void btnDownloadPDF_Click(object sender, EventArgs e)
+        //{
+        //    // Create a new PDF document
+        //    Document doc = new Document();
+        //    // Set file name
+        //    string fileName = Server.MapPath("~/YourFolder/YourPDFFileName.pdf");
+        //    // Create a new PDF file
+        //    PdfWriter.GetInstance(doc, new FileStream(fileName, FileMode.Create));
+            
+        //    // Open the document
+        //    doc.Open();
+        //    // Add content to the document (you can add HTML content, text, images, etc.)
+        //    Paragraph para = new Paragraph("Hello, this is a sample PDF document.");
+        //    doc.Add(para);
+        //    // Close the document
+        //    doc.Close();
 
-            // Open the document
-            doc.Open();
-            // Add content to the document (you can add HTML content, text, images, etc.)
-            Paragraph para = new Paragraph("Hello, this is a sample PDF document.");
-            doc.Add(para);
-            // Close the document
-            doc.Close();
-
-            // Force the browser to download the PDF file
-            Response.ContentType = "application/pdf";
-            Response.AppendHeader("Content-Disposition", "attachment; filename=" + Path.GetFileName(fileName));
-            Response.TransmitFile(fileName);
-            Response.End();
-        }
+        //    // Force the browser to download the PDF file
+        //    Response.ContentType = "application/pdf";
+        //    Response.AppendHeader("Content-Disposition", "attachment; filename=" + Path.GetFileName(fileName));
+        //    Response.TransmitFile(fileName);
+        //    Response.End();
+        //}
 
     }
     public class TableData

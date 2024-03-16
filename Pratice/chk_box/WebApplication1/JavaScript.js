@@ -15,11 +15,11 @@ $('#btnReport').click(function () {
             var myList = [];
             for (var i = 0; i < data['d'].length; i++) {
                 var item = {};
-                item.Column1 = data.d[i].Column1;
-                item.Column2 = data.d[i].Column2;
-                item.Column3 = data.d[i].Column3;
-                item.Column4 = data.d[i].Column4;
-                item.Column5 = data.d[i].Column5;
+                item.ID = data.d[i].Column1;
+                item.Name = data.d[i].Column2;
+                item.lastName= data.d[i].Column3;
+                item.Subject = data.d[i].Column4;
+                item.College = data.d[i].Column5;
                 item.Column6 = data.d[i].Column6;
                 item.Column7 = data.d[i].Column7;
                 item.Column8 = data.d[i].Column8;

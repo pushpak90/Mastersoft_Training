@@ -41,18 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\businessLogic\businessLogic.csproj">
-      <Project>{94643870-7b75-46b8-afd3-7749bece113b}</Project>
-      <Name>businessLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\businessObject\businessObject.csproj">
-      <Project>{92be5953-df6a-4dd4-ba93-ea8a72e710a8}</Project>
-      <Name>businessObject</Name>
-    </ProjectReference>
+    <Compile Include="UserDA.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

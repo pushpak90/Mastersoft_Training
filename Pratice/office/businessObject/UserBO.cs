@@ -10,5 +10,9 @@ namespace businessObject
     {
         public string id {  get; set; }
         public string displayText { get; set; }
+
+        public string ddl_id { get; set; }
+        public string check_id { get; set; }
+        public string form_date { get; set; }
     }
 }

@@ -15,7 +15,7 @@
             <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList><br />
             <asp:CheckBoxList ID="CheckBoxList1" runat="server"></asp:CheckBoxList><br />
             <asp:TextBox ID="TextBox1" runat="server" type="date"></asp:TextBox><br />
-            <asp:Button ID="Button1" runat="server" Text="Button" />
+            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"/>
         </div>
     </form>
 </body>

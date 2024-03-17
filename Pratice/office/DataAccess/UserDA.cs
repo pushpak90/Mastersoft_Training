@@ -72,8 +72,6 @@ namespace DataAccess
                     cmd.Parameters.Add(para[i]);
                 }
                 //cmd.Parameters.AddRange(para);
-
-
                 con.Open();
                 msg = (cmd.ExecuteNonQuery()).ToString();
 

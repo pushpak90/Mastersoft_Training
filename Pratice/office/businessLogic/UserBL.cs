@@ -36,7 +36,7 @@ namespace businessLogic
              UserDA da = new UserDA(_connection);
              try
              {
-                 ds = da.bindddl("SELECT ID_S, SUB_NAME FROM SUB");
+                 ds = da.bindddl("SELECT CODE, SUB_NAME FROM SUB");
              }
              catch (Exception ex)
              {
@@ -64,5 +64,23 @@ namespace businessLogic
              }
              return msg;
          }
+
+        public DataSet control_ddl_comb()
+        {
+            DataSet ds = new DataSet();
+            string msg = string.Empty;
+            UserDA da = new UserDA(_connection);
+            try
+            {
+                ds = da.bindddl("BIND_DDL");
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+
+            return ds;
+        }
+
     }
 }

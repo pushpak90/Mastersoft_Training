@@ -1,0 +1,31 @@
+USE [Company]
+GO
+/****** Object:  StoredProcedure [dbo].[Hello_data]    Script Date: 18-03-2024 22:20:25 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[Hello_data]
+    @P_BRANCHID NVARCHAR(128),
+    @P_SUBID NVARCHAR(MAX),
+    @P_DATE NVARCHAR(128)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+	--DECLARE @P_SUBID NVARCHAR(MAX) = 'sub01, sub02';
+
+    DECLARE @SubIdTable TABLE (SubId NVARCHAR(128));
+	
+    -- Insert split values into a table variable using the SplitString function
+    INSERT INTO @SubIdTable (SubId)
+    SELECT Item FROM dbo.SplitString(@P_SUBID, ',');
+
+	--select * from @SubIdTable
+	
+    -- Insert rows into TAB1 using the values from the table variable
+    INSERT INTO TAB1 (BRANCH_ID, SUB_ID, FORM_DATE)
+    SELECT @P_BRANCHID, SU.ID_S, @P_DATE
+    FROM @SubIdTable AS SP INNER JOIN SUB AS SU ON SP.SubId = SU.CODE
+
+END

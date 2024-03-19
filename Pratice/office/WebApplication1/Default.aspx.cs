@@ -89,22 +89,30 @@ namespace WebApplication1
             UserBL bl = new UserBL();
             try
             {
-                bo.ddl_id = DropDownList1.SelectedValue;
-                foreach (ListItem item in CheckBoxList1.Items)
+                if (CheckBoxList1.SelectedIndex > 0)
                 {
-                    // Check if the item is selected
-                    if (item.Selected)
+                    foreach (ListItem item in CheckBoxList1.Items)
                     {
-                        // Concatenate the selected item's value to the string
-                        bo.check_id = bo.check_id + item.Value + ",";
+                        // Check if the item is selected
+                        if (item.Selected)
+                        {
+                            // Concatenate the selected item's value to the string
+                            bo.check_id = bo.check_id + item.Value + ",";
+                        }
+                    }
+
+                    // Remove the trailing comma if any
+                    if (!string.IsNullOrEmpty(bo.check_id))
+                    {
+                        bo.check_id = bo.check_id.TrimEnd(',');
                     }
                 }
-
-                // Remove the trailing comma if any
-                if (!string.IsNullOrEmpty(bo.check_id))
+                else
                 {
-                    bo.check_id = bo.check_id.TrimEnd(',');
+                    bo.check_id = "0";
                 }
+                bo.ddl_id = DropDownList1.SelectedValue;
+                
                 bo.form_date = TextBox1.Text;
 
                 msg = bl.c_insert_data(bo);

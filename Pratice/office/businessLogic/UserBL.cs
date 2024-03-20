@@ -54,7 +54,16 @@ namespace businessLogic
              {
                 SqlParameter[] para = new SqlParameter[3];
                 para[0] = new SqlParameter("@P_BRANCHID", bo.ddl_id);
-                para[1] = new SqlParameter("@P_SUBID", bo.check_id);
+                if(bo.check_id == "" || bo.check_id == "0" || bo.check_id == string.Empty)
+                {
+                    para[1] = new SqlParameter("@P_SUBID", DBNull.Value);
+                }
+                else
+                {
+                    para[1] = new SqlParameter("@P_SUBID", bo.check_id);
+                }
+                
+
                 para[2] = new SqlParameter("@P_DATE", bo.form_date);
                 msg = da.insertSP("Hello_data", para);
              }

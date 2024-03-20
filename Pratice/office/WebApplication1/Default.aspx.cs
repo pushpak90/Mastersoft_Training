@@ -109,7 +109,7 @@ namespace WebApplication1
                 }
                 else
                 {
-                    bo.check_id = "0";
+                    bo.check_id = "";
                 }
                 bo.ddl_id = DropDownList1.SelectedValue;
                 

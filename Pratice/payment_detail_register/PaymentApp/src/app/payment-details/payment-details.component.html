@@ -8,6 +8,10 @@
         <app-payment-detail-form />
     </div>
     <div class="col-6">
-        List Payment Details
+        <ul class="list-group">
+            <li class="list-group-item d-flex " *ngFor="let pd of service.list">
+                {{pd.cardOwnerName}}
+            </li>
+        </ul>
     </div>
 </div>

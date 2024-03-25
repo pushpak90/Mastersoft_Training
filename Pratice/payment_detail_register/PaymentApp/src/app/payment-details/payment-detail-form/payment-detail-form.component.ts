@@ -3,6 +3,8 @@ import { PaymentDetailService } from '../../shared/payment-detail.service';
 import { NgForm } from '@angular/forms';
 import { PaymentDetail } from '../../shared/payment-detail.model';
 
+
+
 @Component({
   selector: 'app-payment-detail-form',
   templateUrl: './payment-detail-form.component.html',

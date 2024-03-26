@@ -1,0 +1,29 @@
+1. 	Webform - 2002
+2. 	Dot Net MVC - 2009
+3. 	Dot Net Core - 2016
+	1. 	fast and open source
+	2.	Cross platform
+	3.	Easy Update
+	4.	clould friendly
+	5.	performance
+
+-	Prerequisities
+	1.	C# basic
+	2.	SQL Server
+
+-	Tools Needed
+	Dot Net 7 or Dot Net 8
+	Visual Studio 2022
+	SSMS 2018
+
+Step 1.	open 2022 - project - ASP.NET Core Web APP (Model-View-Controller)
+Step 2. Project Name - BulkyWeb
+		Solution Name - Bulky
+Step 3. Dot Net 80 (preview)
+		None
+->	Solution can contain multiple projects
+->	Dependencies - it is depend on project or package
+	contain package
+	and also projects (references)
+->	Properties - laucnsetting.json
+	it contain the port number and basic property of project that can configure through user as well.
